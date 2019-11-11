@@ -1,0 +1,21 @@
+{
+  "name": "tar-heel-hero",
+  "version": "1.0.0",
+  "description": "Rhythm-based game with a focus on accessibility.",
+  "main": "init.js",
+  "scripts": {
+    "start": "beefy .\\public\\assets\\js\\init.js --live",
+    "build": "browserify .\\public\\assets\\js\\init.js -o .\\public\\assets\\js\\bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "Tar Heel Hero"
+  },
+  "author": "Austin Hale",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "jquery": "^3.4.1",
+    "three": "^0.110.0"
+  }
+}

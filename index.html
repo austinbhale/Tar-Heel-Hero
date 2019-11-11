@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tar Heel Hero</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css">
+    <link rel="stylesheet" href="public/assets/css/styles.css">
+    <!-- remove for production -->
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+
+<body>
+    <div class="instructions-ctr hide" id="instructions-ctr">
+        <h1>How To Play</h1>
+        <p>These are the instructions.</p>
+    </div>
+    <div id="main-menu" class="main-menu">
+        <i id="instructions" class="fa fa-info-circle" aria-hidden="true"></i>
+        <h1 class="title">Tar Heel Hero</h1>
+        <h3 class="diff-title">Difficulty</h3>
+        <div class="difficulty-ctr">
+            <ul class="difficulty-list" id="difficulty-list">
+                <li>
+                    <img class="guitar-img" src="public/assets/images/guitar.png" alt="">
+                    <p class="single-column-mode">Single-Column Mode</p>
+                </li>
+                <li>
+                    <img class="guitar-img" src="public/assets/images/guitar.png" alt="">
+                    <p class="2-column-mode">2-Column Mode</p>
+                </li>
+                <li>
+                    <img class="guitar-img" src="public/assets/images/guitar.png" alt="">
+                    <p class="2-column-mode">Beginner</p>
+                </li>
+                <li id="default-diff">
+                    <img class="guitar-img" src="public/assets/images/guitar.png" alt="">
+                    <p class="2-column-mode">Medium</p>
+                </li>
+                <li>
+                    <img class="guitar-img" src="public/assets/images/guitar.png" alt="">
+                    <p class="2-column-mode">Hard</p>
+                </li>
+                <li>
+                    <img class="guitar-img" src="public/assets/images/guitar.png" alt="">
+                    <p class="2-column-mode">Difficult</p>
+                </li>
+                <li>
+                    <img class="guitar-img" src="public/assets/images/guitar.png" alt="">
+                    <p class="2-column-mode">Impossible</p>
+                </li>
+            </ul>
+        </div>
+        <div class="song-ctr">
+            <h3>Song</h3>
+            <select name="song-select" id="song-select">
+                <option value="thunderstruck">Come A Little Closer - Cage the Elephant</option>
+            </select>
+        </div>
+        <div class="song-ctr">
+            <h3>Venue</h3>
+            <select name="venue-select" id="venue-select">
+                <option value="concert">Concert</option>
+            </select>
+        </div>
+        <div class="play-ctr">
+            <button id="play-btn">Play</button>
+        </div>
+    </div>
+    <div class="game-features">
+        <!-- <button>hello</button> -->
+    </div>
+</body>
+<script src='https://surikov.github.io/webaudiofont/npm/dist/WebAudioFontPlayer.js'></script>
+<script src='https://surikov.github.io/webaudiofontdata/sound/0300_LesPaul_sf2.js'></script>
+<!-- Use init.js for development -->
+<script type="module" src="public/assets/js/bundle.js"></script>
+</html>
