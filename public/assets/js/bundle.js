@@ -60655,30 +60655,69 @@ var game = require('./modules/gameplay');
 
 const pitches = play.pitches();
 
-var scene, camera, renderer, numOfCols; // good
-const isDown = {} // good
+// Main THREE.js template.
+var scene, camera, renderer;
 
+// Keydown/Keyup differentiation.
+const isDown = {}
+
+// Grid variables.
 var start, end, movingLines, setActiveIdx;
-var notes, notesMovement;
+var notes, notesMovement
+var numOfCols = 4;
 var originalMeshPositions;
 var lineVecs, linePos;
 var circles, originalColors;
-var objOffsetY = 0.1;
 
+// Note frequency.
 var skipLines = 1;
 var totalNoteLine = 0; // each individual line
 var currNoteLine = 0; // going through the json
 var oneNote = true;
 var activePitches = [];
-
 var totalDuration, release;
 
-////// Read JSON
+// Read JSON data.
 var notesPerLine;
-notesData.getMusicJSON($, function (data) {
-    notesPerLine = data;
-    init();
-});
+
+getMenuChoice();
+
+function getMenuChoice() {
+    var instructions = document.getElementById("instructions");
+    instructions.addEventListener('click', () => {
+        var instructionsCtr = document.getElementById('instructions-ctr');
+        instructionsCtr.classList.contains('hide') ? instructionsCtr.classList.remove('hide') : instructionsCtr.classList.add('hide');
+    });
+
+    var diffList = document.getElementById('difficulty-list');
+    var target = document.getElementById('default-diff');
+    diffList.addEventListener('click', (event) => {
+        target.children[0].style.visibility = "hidden";
+
+        target = event.target.closest('li');
+        target.children[0].style.visibility = "visible";
+
+        const index = [...target.parentElement.children].indexOf(target)
+        numOfCols = index + 1;
+    });
+
+    var menu = document.getElementById("main-menu");
+
+    var playBtn = document.getElementById('play-btn');
+    playBtn.addEventListener('click', () => {
+        menu.style.display = "none";
+        notesData.getMusicJSON($, function (data) {
+            notesPerLine = data;
+            init();
+        });
+    });
+    //// remove during production
+    notesData.getMusicJSON($, function (data) {
+        notesPerLine = data;
+        init();
+    });
+    ////
+}
 
 function init() {
     scene = new THREE.Scene();
@@ -60721,35 +60760,6 @@ function init() {
         camera.updateProjectionMatrix();
     });
 
-    var instructions = document.getElementById("instructions");
-    instructions.addEventListener('click', () => {
-        var instructionsCtr = document.getElementById('instructions-ctr');
-        instructionsCtr.classList.contains('hide') ? instructionsCtr.classList.remove('hide') : instructionsCtr.classList.add('hide');
-    });
-
-    numOfCols = 4;
-
-    var diffList = document.getElementById('difficulty-list');
-    var target = document.getElementById('default-diff');
-    diffList.addEventListener('click', (event) => {
-        target.children[0].style.visibility = "hidden";
-
-        target = event.target.closest('li');
-        target.children[0].style.visibility = "visible";
-
-        const index = [...target.parentElement.children].indexOf(target)
-        numOfCols = index + 1;
-    });
-
-    var menu = document.getElementById("main-menu");
-
-    var playBtn = document.getElementById('play-btn');
-    playBtn.addEventListener('click', () => {
-        menu.style.display = "none";
-        initializeGrid();
-    });
-
-    // remove during production
     initializeGrid();
 }
 
@@ -60879,6 +60889,7 @@ function initializeGrid() {
 
     notes = [];
     notesMovement = [];
+    const objOffsetY = 0.1;
 
     originalMeshPositions = [];
     var colColors = [
@@ -60917,6 +60928,9 @@ function initializeGrid() {
 
             var moveVec = new THREE.Vector3(vecAvgX, 10 + objOffsetY, -9);
             notesMovement[i].push(moveVec);
+            mesh.traverse(function (mesh) {
+                mesh.visible = false;
+            });
             notes[i].push(mesh);
             scene.add(mesh);
         }
@@ -60962,10 +60976,54 @@ function initializeGrid() {
         scene.add(circle);
     }
 
-    for (var i = 0; i < numMovingLines; i++) {
-        activePitches[i] = []
+    currNoteLine = 0;
+    var iterable = 0;
+    var duration_dist = 0;
+    while (currNoteLine < notesPerLine.length) {
+        activePitches[iterable] = [];
+
+        const pitches = [];
+        for (var i = 0; i < numOfCols; i++) {
+            pitches[i] = false;
+        }
+
+        if (duration_dist == 0) {
+            for (var i = 0; i < notesPerLine[currNoteLine].length; i++) {
+                duration_dist = notesPerLine[currNoteLine][i].duration - 2;
+                switch(notesPerLine[currNoteLine][i].pitch) {
+                    case "A":
+                        pitches[game.checkArrElement(pitches, 0)] = true;
+                        break;
+                    case "B":
+                        pitches[game.checkArrElement(pitches, 1)] = true;
+                        break;
+                    case "C":
+                        pitches[game.checkArrElement(pitches, 2)] = true;
+                        break;
+                    case "D":
+                        pitches[game.checkArrElement(pitches, 3)] = true;
+                        break;
+                    case "E":
+                        pitches[game.checkArrElement(pitches, 4)] = true;
+                        break;
+                    case "F":
+                        pitches[game.checkArrElement(pitches, 5)] = true;
+                        break;
+                    case "G":
+                        pitches[game.checkArrElement(pitches, 6)] = true;
+                        break;
+                }
+            }            
+            currNoteLine++;
+        } else {
+            duration_dist -= 2;
+        }
+
+        activePitches[iterable] = pitches;
+        iterable++;
     }
 
+    currNoteLine = -1;
     ////////////////////////
 
     document.body.addEventListener('keydown', onKeyDown, false);
@@ -61142,10 +61200,10 @@ function animate() {
 function render() {
 
     // return early to pause the game
-    // if (count > 45) {
-    //     return;
-    // }
-    // count +=0.1
+    if (currNoteLine >= activePitches.length) {
+        console.log("end of song");
+        return;
+    }
 
     // Bases for mesh should be 100 and line is 10.
     // 10 : 100, 5 : 200, 2.5 : 400, and so on for mesh and line speed factors.
@@ -61176,29 +61234,19 @@ function render() {
         if (i >= setActiveIdx) {
             continue;
         }
-        // release = releaseNotes(meshSpeedFactor, i);
+
         //////RELEASE NOTES
-        if (currNoteLine >= notesPerLine.length) {
-            // end of song
-        } else {
-            for (var h = 0; h < notesPerLine[currNoteLine].length; h++) {
-                activePitches[i].push(notesPerLine[currNoteLine][h])
-            }
-            totalDuration = activePitches[currNoteLine][0].duration;
-        }
-        // console.log(notesPerLine)
         release = false;
         for (var j = 0; j < notes[i].length; j++) {
             let mesh = notes[i][j];
 
             ///// RESET
-            if (mesh.position.y <= -2.3) {
+            if (mesh.position.y <= -2.2) {
                 mesh.position.set(originalMeshPositions[j].x, originalMeshPositions[j].y, originalMeshPositions[j].z);
                 release = true;
-                // total duration is: measures * 32
-                // if (skipLines == 1) {
-                //     oneNote = false;
-                // }
+                    mesh.traverse(function (mesh) {
+                        mesh.visible = false;
+                    });      
             } else {
                 mesh.position.x -= notesMovement[i][j].x / meshSpeedFactor;
                 mesh.position.y -= notesMovement[i][j].y / meshSpeedFactor;
@@ -61206,27 +61254,11 @@ function render() {
                 release = false;
             }
 
-            mesh.traverse(function (mesh) {
-                mesh.visible = false;
-            });
-
-            ///// NOTE GENERATION ////
-            // just setting meshes to true at certain times, every line is 2 duration
-            // check by indices
-            // if (skipLines == 1 && i == 3 && j == 3 && oneNote) {
-            //     mesh.traverse(function (mesh) {
-            //         mesh.visible = true;
-            //     });
-            //     // oneNote = false;
-            // }
-
-            for (var k = 0; k < activePitches.length; k++) {
-                // if active for each pitch set to true
+            if (i==currNoteLine%movingLines.length && activePitches[currNoteLine][j]) {
                 mesh.traverse(function (mesh) {
                     mesh.visible = true;
                 });
             }
-
         }
 
         if (setActiveIdx < movingLines.length &&
@@ -61254,9 +61286,7 @@ function render() {
                 line.visible = true;
             });
             line.position.set(0, 0, 0);
-            // skipLines = (skipLines / 2).toFixed(0);
-            // activePitches[i] = []
-            totalNoteLine++;
+            currNoteLine++;
         } else {
             line.scale.x = helpers.getOriginalXScale();
             line.traverse(function (line) {
@@ -61276,7 +61306,7 @@ module.exports = {
                 factor: 5
             },
             medium: {
-                value: 1.5,
+                value: 1.7,
                 factor: 6.5
             },
             hard: {
@@ -61284,6 +61314,17 @@ module.exports = {
                 factor: 9.5
             }
         }
+    },
+    checkArrElement: function (arr, index) {
+        var start = 0;
+        while (start < arr.length) {
+            if (!arr[(index + start) % arr.length]) {
+                return (index + start) % arr.length;
+            }
+            start++;
+        }
+        // already full
+        return index % arr.length;
     }
 }
 },{}],5:[function(require,module,exports){

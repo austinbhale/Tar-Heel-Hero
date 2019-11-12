@@ -9,14 +9,20 @@ import json
 # for double/triple notes check if x-distance is either 0 or 4.5 apart due to single vs double digit tabs
 
 def main():
-    f = open('../sheet-music/come-a-little-closer.xml', 'r')
+    # Change file path and check part for each xml file.
+    f = open('../sheet-music/avengers/avengers.xml', 'r')
     fl = f.readlines()
 
-    guitarId = "<part id=\"P2\">"
+    guitarId = "<part id=\"P1\">" # make sure this is the instrument you want
     stopId = "</part>"
     instActive = False
 
     tied = "None"
+    measure = 0
+    defaultX = 0
+    defaultY = 0
+    pitch = 0
+    duration = 0
 
     notes = []
     for line in fl:
@@ -51,14 +57,15 @@ def main():
                 m = re.search(r'.*<tied type=\"(.+)\".*', line)
                 tied = m.group(1)
             elif "</note>" in line:
-                note = Note(measure, defaultX, defaultY, pitch, duration, tied)
-                notes.append(note)
+                if(measure and defaultX and defaultY and pitch and duration):
+                    note = Note(measure, defaultX, defaultY, pitch, duration, tied)
+                    notes.append(note)
                 tied = "None"
 
     # json_string = json.dumps([note.__dict__ for note in notes])
     # print(json_string)
 
-    with open('../sheet-data/data.json', 'w', encoding='utf-8') as f:
+    with open('../data.json', 'w', encoding='utf-8') as f:
         json.dump([note.__dict__ for note in notes], f, ensure_ascii=False, indent=4)
 
 class Note:

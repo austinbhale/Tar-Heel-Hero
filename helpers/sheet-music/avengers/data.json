@@ -1,0 +1,3378 @@
+[
+    {
+        "measure": "1",
+        "defaultX": "76.78",
+        "defaultY": "-10.00",
+        "pitch": "D",
+        "duration": "6",
+        "tied": "None"
+    },
+    {
+        "measure": "1",
+        "defaultX": "130.25",
+        "defaultY": "-10.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "1",
+        "defaultX": "151.21",
+        "defaultY": "-10.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "1",
+        "defaultX": "172.17",
+        "defaultY": "-10.00",
+        "pitch": "D",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "1",
+        "defaultX": "218.29",
+        "defaultY": "-10.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "1",
+        "defaultX": "239.25",
+        "defaultY": "-10.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "1",
+        "defaultX": "260.22",
+        "defaultY": "-10.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "1",
+        "defaultX": "281.18",
+        "defaultY": "-10.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "1",
+        "defaultX": "79.28",
+        "defaultY": "-120.00",
+        "pitch": "D",
+        "duration": "6",
+        "tied": "None"
+    },
+    {
+        "measure": "1",
+        "defaultX": "132.75",
+        "defaultY": "-120.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "1",
+        "defaultX": "153.71",
+        "defaultY": "-120.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "1",
+        "defaultX": "174.67",
+        "defaultY": "-120.00",
+        "pitch": "D",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "1",
+        "defaultX": "220.79",
+        "defaultY": "-120.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "1",
+        "defaultX": "241.75",
+        "defaultY": "-120.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "1",
+        "defaultX": "262.72",
+        "defaultY": "-120.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "1",
+        "defaultX": "283.68",
+        "defaultY": "-120.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "2",
+        "defaultX": "18.42",
+        "defaultY": "-10.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "2",
+        "defaultX": "39.19",
+        "defaultY": "-10.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "2",
+        "defaultX": "59.96",
+        "defaultY": "-10.00",
+        "pitch": "D",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "2",
+        "defaultX": "105.65",
+        "defaultY": "-10.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "2",
+        "defaultX": "126.43",
+        "defaultY": "-10.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "2",
+        "defaultX": "147.20",
+        "defaultY": "-5.00",
+        "pitch": "E",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "2",
+        "defaultX": "192.89",
+        "defaultY": "-5.00",
+        "pitch": "E",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "2",
+        "defaultX": "213.66",
+        "defaultY": "-5.00",
+        "pitch": "E",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "2",
+        "defaultX": "234.44",
+        "defaultY": "-5.00",
+        "pitch": "E",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "2",
+        "defaultX": "255.21",
+        "defaultY": "-5.00",
+        "pitch": "E",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "2",
+        "defaultX": "20.92",
+        "defaultY": "-120.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "2",
+        "defaultX": "41.69",
+        "defaultY": "-120.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "2",
+        "defaultX": "62.46",
+        "defaultY": "-120.00",
+        "pitch": "D",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "2",
+        "defaultX": "108.15",
+        "defaultY": "-120.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "2",
+        "defaultX": "128.93",
+        "defaultY": "-120.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "2",
+        "defaultX": "149.70",
+        "defaultY": "-105.00",
+        "pitch": "E",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "2",
+        "defaultX": "195.39",
+        "defaultY": "-105.00",
+        "pitch": "E",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "2",
+        "defaultX": "216.16",
+        "defaultY": "-105.00",
+        "pitch": "E",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "2",
+        "defaultX": "236.94",
+        "defaultY": "-105.00",
+        "pitch": "E",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "2",
+        "defaultX": "257.71",
+        "defaultY": "-105.00",
+        "pitch": "E",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "3",
+        "defaultX": "12.92",
+        "defaultY": "0.00",
+        "pitch": "F",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "3",
+        "defaultX": "34.17",
+        "defaultY": "0.00",
+        "pitch": "F",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "3",
+        "defaultX": "55.42",
+        "defaultY": "0.00",
+        "pitch": "F",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "3",
+        "defaultX": "102.18",
+        "defaultY": "0.00",
+        "pitch": "F",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "3",
+        "defaultX": "123.44",
+        "defaultY": "0.00",
+        "pitch": "F",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "3",
+        "defaultX": "144.69",
+        "defaultY": "-5.00",
+        "pitch": "E",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "3",
+        "defaultX": "191.45",
+        "defaultY": "-5.00",
+        "pitch": "E",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "3",
+        "defaultX": "212.70",
+        "defaultY": "-5.00",
+        "pitch": "E",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "3",
+        "defaultX": "233.95",
+        "defaultY": "-5.00",
+        "pitch": "E",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "3",
+        "defaultX": "255.21",
+        "defaultY": "-5.00",
+        "pitch": "E",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "3",
+        "defaultX": "15.42",
+        "defaultY": "-105.00",
+        "pitch": "F",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "3",
+        "defaultX": "36.67",
+        "defaultY": "-105.00",
+        "pitch": "F",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "3",
+        "defaultX": "57.92",
+        "defaultY": "-105.00",
+        "pitch": "F",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "3",
+        "defaultX": "104.68",
+        "defaultY": "-105.00",
+        "pitch": "F",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "3",
+        "defaultX": "125.94",
+        "defaultY": "-105.00",
+        "pitch": "F",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "3",
+        "defaultX": "147.19",
+        "defaultY": "-105.00",
+        "pitch": "E",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "3",
+        "defaultX": "193.95",
+        "defaultY": "-105.00",
+        "pitch": "E",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "3",
+        "defaultX": "215.20",
+        "defaultY": "-105.00",
+        "pitch": "E",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "3",
+        "defaultX": "236.45",
+        "defaultY": "-105.00",
+        "pitch": "E",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "3",
+        "defaultX": "257.71",
+        "defaultY": "-105.00",
+        "pitch": "E",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "4",
+        "defaultX": "18.42",
+        "defaultY": "-10.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "4",
+        "defaultX": "38.30",
+        "defaultY": "-10.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "4",
+        "defaultX": "58.18",
+        "defaultY": "-10.00",
+        "pitch": "D",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "4",
+        "defaultX": "101.92",
+        "defaultY": "-10.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "4",
+        "defaultX": "121.81",
+        "defaultY": "-10.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "4",
+        "defaultX": "152.89",
+        "defaultY": "-25.00",
+        "pitch": "A",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "4",
+        "defaultX": "196.63",
+        "defaultY": "-15.00",
+        "pitch": "C",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "4",
+        "defaultX": "20.92",
+        "defaultY": "-120.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "4",
+        "defaultX": "40.80",
+        "defaultY": "-120.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "4",
+        "defaultX": "60.68",
+        "defaultY": "-120.00",
+        "pitch": "D",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "4",
+        "defaultX": "104.42",
+        "defaultY": "-120.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "4",
+        "defaultX": "124.31",
+        "defaultY": "-120.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "4",
+        "defaultX": "155.39",
+        "defaultY": "-135.00",
+        "pitch": "A",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "4",
+        "defaultX": "199.13",
+        "defaultY": "-120.00",
+        "pitch": "C",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "5",
+        "defaultX": "50.67",
+        "defaultY": "-10.00",
+        "pitch": "D",
+        "duration": "6",
+        "tied": "None"
+    },
+    {
+        "measure": "5",
+        "defaultX": "110.06",
+        "defaultY": "-10.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "5",
+        "defaultX": "133.33",
+        "defaultY": "-10.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "5",
+        "defaultX": "156.61",
+        "defaultY": "-10.00",
+        "pitch": "D",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "5",
+        "defaultX": "207.82",
+        "defaultY": "-10.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "5",
+        "defaultX": "231.10",
+        "defaultY": "-10.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "5",
+        "defaultX": "254.38",
+        "defaultY": "-10.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "5",
+        "defaultX": "277.66",
+        "defaultY": "-10.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "5",
+        "defaultX": "53.18",
+        "defaultY": "-120.00",
+        "pitch": "D",
+        "duration": "6",
+        "tied": "None"
+    },
+    {
+        "measure": "5",
+        "defaultX": "112.56",
+        "defaultY": "-120.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "5",
+        "defaultX": "135.83",
+        "defaultY": "-120.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "5",
+        "defaultX": "159.11",
+        "defaultY": "-120.00",
+        "pitch": "D",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "5",
+        "defaultX": "210.32",
+        "defaultY": "-120.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "5",
+        "defaultX": "233.60",
+        "defaultY": "-120.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "5",
+        "defaultX": "256.88",
+        "defaultY": "-120.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "5",
+        "defaultX": "280.16",
+        "defaultY": "-120.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "6",
+        "defaultX": "18.42",
+        "defaultY": "-10.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "6",
+        "defaultX": "39.29",
+        "defaultY": "-10.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "6",
+        "defaultX": "60.16",
+        "defaultY": "-10.00",
+        "pitch": "D",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "6",
+        "defaultX": "106.09",
+        "defaultY": "-10.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "6",
+        "defaultX": "126.96",
+        "defaultY": "-10.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "6",
+        "defaultX": "147.84",
+        "defaultY": "-5.00",
+        "pitch": "E",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "6",
+        "defaultX": "193.76",
+        "defaultY": "-5.00",
+        "pitch": "E",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "6",
+        "defaultX": "214.63",
+        "defaultY": "-5.00",
+        "pitch": "E",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "6",
+        "defaultX": "235.51",
+        "defaultY": "-5.00",
+        "pitch": "E",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "6",
+        "defaultX": "256.38",
+        "defaultY": "-5.00",
+        "pitch": "E",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "6",
+        "defaultX": "20.92",
+        "defaultY": "-120.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "6",
+        "defaultX": "41.79",
+        "defaultY": "-120.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "6",
+        "defaultX": "62.66",
+        "defaultY": "-120.00",
+        "pitch": "D",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "6",
+        "defaultX": "108.59",
+        "defaultY": "-120.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "6",
+        "defaultX": "129.46",
+        "defaultY": "-120.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "6",
+        "defaultX": "150.34",
+        "defaultY": "-105.00",
+        "pitch": "E",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "6",
+        "defaultX": "196.26",
+        "defaultY": "-105.00",
+        "pitch": "E",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "6",
+        "defaultX": "217.13",
+        "defaultY": "-105.00",
+        "pitch": "E",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "6",
+        "defaultX": "238.01",
+        "defaultY": "-105.00",
+        "pitch": "E",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "6",
+        "defaultX": "258.88",
+        "defaultY": "-105.00",
+        "pitch": "E",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "7",
+        "defaultX": "12.92",
+        "defaultY": "0.00",
+        "pitch": "F",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "7",
+        "defaultX": "34.27",
+        "defaultY": "0.00",
+        "pitch": "F",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "7",
+        "defaultX": "55.63",
+        "defaultY": "0.00",
+        "pitch": "F",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "7",
+        "defaultX": "102.61",
+        "defaultY": "0.00",
+        "pitch": "F",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "7",
+        "defaultX": "123.97",
+        "defaultY": "0.00",
+        "pitch": "F",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "7",
+        "defaultX": "145.33",
+        "defaultY": "-5.00",
+        "pitch": "E",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "7",
+        "defaultX": "192.31",
+        "defaultY": "-5.00",
+        "pitch": "E",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "7",
+        "defaultX": "213.67",
+        "defaultY": "-5.00",
+        "pitch": "E",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "7",
+        "defaultX": "235.02",
+        "defaultY": "-5.00",
+        "pitch": "E",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "7",
+        "defaultX": "256.38",
+        "defaultY": "-5.00",
+        "pitch": "E",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "7",
+        "defaultX": "15.42",
+        "defaultY": "-105.00",
+        "pitch": "F",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "7",
+        "defaultX": "36.77",
+        "defaultY": "-105.00",
+        "pitch": "F",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "7",
+        "defaultX": "58.13",
+        "defaultY": "-105.00",
+        "pitch": "F",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "7",
+        "defaultX": "105.11",
+        "defaultY": "-105.00",
+        "pitch": "F",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "7",
+        "defaultX": "126.47",
+        "defaultY": "-105.00",
+        "pitch": "F",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "7",
+        "defaultX": "147.83",
+        "defaultY": "-105.00",
+        "pitch": "E",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "7",
+        "defaultX": "194.81",
+        "defaultY": "-105.00",
+        "pitch": "E",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "7",
+        "defaultX": "216.17",
+        "defaultY": "-105.00",
+        "pitch": "E",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "7",
+        "defaultX": "237.52",
+        "defaultY": "-105.00",
+        "pitch": "E",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "7",
+        "defaultX": "258.88",
+        "defaultY": "-105.00",
+        "pitch": "E",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "8",
+        "defaultX": "18.42",
+        "defaultY": "-10.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "8",
+        "defaultX": "38.42",
+        "defaultY": "-10.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "8",
+        "defaultX": "58.43",
+        "defaultY": "-10.00",
+        "pitch": "D",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "8",
+        "defaultX": "102.44",
+        "defaultY": "-10.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "8",
+        "defaultX": "122.44",
+        "defaultY": "-10.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "8",
+        "defaultX": "153.52",
+        "defaultY": "-25.00",
+        "pitch": "A",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "8",
+        "defaultX": "197.53",
+        "defaultY": "-15.00",
+        "pitch": "C",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "8",
+        "defaultX": "20.92",
+        "defaultY": "-120.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "8",
+        "defaultX": "40.92",
+        "defaultY": "-120.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "8",
+        "defaultX": "60.93",
+        "defaultY": "-120.00",
+        "pitch": "D",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "8",
+        "defaultX": "104.94",
+        "defaultY": "-120.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "8",
+        "defaultX": "124.94",
+        "defaultY": "-120.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "8",
+        "defaultX": "156.02",
+        "defaultY": "-135.00",
+        "pitch": "A",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "8",
+        "defaultX": "200.03",
+        "defaultY": "-120.00",
+        "pitch": "C",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "9",
+        "defaultX": "50.67",
+        "defaultY": "-30.00",
+        "pitch": "G",
+        "duration": "6",
+        "tied": "None"
+    },
+    {
+        "measure": "9",
+        "defaultX": "117.84",
+        "defaultY": "-30.00",
+        "pitch": "G",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "9",
+        "defaultX": "144.17",
+        "defaultY": "-30.00",
+        "pitch": "G",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "9",
+        "defaultX": "170.49",
+        "defaultY": "-30.00",
+        "pitch": "G",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "9",
+        "defaultX": "228.42",
+        "defaultY": "-30.00",
+        "pitch": "G",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "9",
+        "defaultX": "254.74",
+        "defaultY": "-30.00",
+        "pitch": "G",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "9",
+        "defaultX": "281.07",
+        "defaultY": "-30.00",
+        "pitch": "G",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "9",
+        "defaultX": "307.40",
+        "defaultY": "-30.00",
+        "pitch": "G",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "9",
+        "defaultX": "53.18",
+        "defaultY": "-135.00",
+        "pitch": "G",
+        "duration": "6",
+        "tied": "None"
+    },
+    {
+        "measure": "9",
+        "defaultX": "120.34",
+        "defaultY": "-135.00",
+        "pitch": "G",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "9",
+        "defaultX": "146.67",
+        "defaultY": "-135.00",
+        "pitch": "G",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "9",
+        "defaultX": "172.99",
+        "defaultY": "-135.00",
+        "pitch": "G",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "9",
+        "defaultX": "230.92",
+        "defaultY": "-135.00",
+        "pitch": "G",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "9",
+        "defaultX": "257.24",
+        "defaultY": "-135.00",
+        "pitch": "G",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "9",
+        "defaultX": "283.57",
+        "defaultY": "-135.00",
+        "pitch": "G",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "9",
+        "defaultX": "309.90",
+        "defaultY": "-135.00",
+        "pitch": "G",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "10",
+        "defaultX": "12.92",
+        "defaultY": "-10.00",
+        "pitch": "D",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "10",
+        "defaultX": "72.44",
+        "defaultY": "-15.00",
+        "pitch": "C",
+        "duration": "3",
+        "tied": "None"
+    },
+    {
+        "measure": "10",
+        "defaultX": "125.23",
+        "defaultY": "-25.00",
+        "pitch": "A",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "10",
+        "defaultX": "152.29",
+        "defaultY": "-25.00",
+        "pitch": "A",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "10",
+        "defaultX": "211.82",
+        "defaultY": "-15.00",
+        "pitch": "C",
+        "duration": "3",
+        "tied": "None"
+    },
+    {
+        "measure": "10",
+        "defaultX": "264.61",
+        "defaultY": "-10.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "10",
+        "defaultX": "15.42",
+        "defaultY": "-120.00",
+        "pitch": "D",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "10",
+        "defaultX": "74.94",
+        "defaultY": "-120.00",
+        "pitch": "C",
+        "duration": "3",
+        "tied": "None"
+    },
+    {
+        "measure": "10",
+        "defaultX": "127.73",
+        "defaultY": "-135.00",
+        "pitch": "A",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "10",
+        "defaultX": "154.79",
+        "defaultY": "-135.00",
+        "pitch": "A",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "10",
+        "defaultX": "214.32",
+        "defaultY": "-120.00",
+        "pitch": "C",
+        "duration": "3",
+        "tied": "None"
+    },
+    {
+        "measure": "10",
+        "defaultX": "267.11",
+        "defaultY": "-120.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "11",
+        "defaultX": "12.92",
+        "defaultY": "-10.00",
+        "pitch": "D",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "11",
+        "defaultX": "76.40",
+        "defaultY": "-30.00",
+        "pitch": "G",
+        "duration": "12",
+        "tied": "None"
+    },
+    {
+        "measure": "11",
+        "defaultX": "15.42",
+        "defaultY": "-120.00",
+        "pitch": "D",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "11",
+        "defaultX": "79.27",
+        "defaultY": "-135.00",
+        "pitch": "G",
+        "duration": "12",
+        "tied": "None"
+    },
+    {
+        "measure": "12",
+        "defaultX": "12.92",
+        "defaultY": "-10.00",
+        "pitch": "D",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "12",
+        "defaultX": "73.86",
+        "defaultY": "-15.00",
+        "pitch": "C",
+        "duration": "3",
+        "tied": "None"
+    },
+    {
+        "measure": "12",
+        "defaultX": "127.90",
+        "defaultY": "-25.00",
+        "pitch": "A",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "12",
+        "defaultX": "155.61",
+        "defaultY": "-25.00",
+        "pitch": "A",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "12",
+        "defaultX": "216.55",
+        "defaultY": "-25.00",
+        "pitch": "A",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "12",
+        "defaultX": "15.42",
+        "defaultY": "-120.00",
+        "pitch": "D",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "12",
+        "defaultX": "76.36",
+        "defaultY": "-120.00",
+        "pitch": "C",
+        "duration": "3",
+        "tied": "None"
+    },
+    {
+        "measure": "12",
+        "defaultX": "130.40",
+        "defaultY": "-135.00",
+        "pitch": "A",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "12",
+        "defaultX": "158.11",
+        "defaultY": "-135.00",
+        "pitch": "A",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "12",
+        "defaultX": "219.05",
+        "defaultY": "-135.00",
+        "pitch": "A",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "13",
+        "defaultX": "50.67",
+        "defaultY": "-30.00",
+        "pitch": "G",
+        "duration": "6",
+        "tied": "None"
+    },
+    {
+        "measure": "13",
+        "defaultX": "119.61",
+        "defaultY": "-30.00",
+        "pitch": "G",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "13",
+        "defaultX": "146.63",
+        "defaultY": "-30.00",
+        "pitch": "G",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "13",
+        "defaultX": "173.65",
+        "defaultY": "-30.00",
+        "pitch": "G",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "13",
+        "defaultX": "233.10",
+        "defaultY": "-30.00",
+        "pitch": "G",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "13",
+        "defaultX": "260.12",
+        "defaultY": "-30.00",
+        "pitch": "G",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "13",
+        "defaultX": "287.15",
+        "defaultY": "-30.00",
+        "pitch": "G",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "13",
+        "defaultX": "314.17",
+        "defaultY": "-30.00",
+        "pitch": "G",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "13",
+        "defaultX": "53.18",
+        "defaultY": "-135.00",
+        "pitch": "G",
+        "duration": "6",
+        "tied": "None"
+    },
+    {
+        "measure": "13",
+        "defaultX": "122.11",
+        "defaultY": "-135.00",
+        "pitch": "G",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "13",
+        "defaultX": "149.13",
+        "defaultY": "-135.00",
+        "pitch": "G",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "13",
+        "defaultX": "176.15",
+        "defaultY": "-135.00",
+        "pitch": "G",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "13",
+        "defaultX": "235.60",
+        "defaultY": "-135.00",
+        "pitch": "G",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "13",
+        "defaultX": "262.62",
+        "defaultY": "-135.00",
+        "pitch": "G",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "13",
+        "defaultX": "289.65",
+        "defaultY": "-135.00",
+        "pitch": "G",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "13",
+        "defaultX": "316.67",
+        "defaultY": "-135.00",
+        "pitch": "G",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "14",
+        "defaultX": "12.92",
+        "defaultY": "-10.00",
+        "pitch": "D",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "14",
+        "defaultX": "71.91",
+        "defaultY": "-15.00",
+        "pitch": "C",
+        "duration": "3",
+        "tied": "None"
+    },
+    {
+        "measure": "14",
+        "defaultX": "124.23",
+        "defaultY": "-25.00",
+        "pitch": "A",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "14",
+        "defaultX": "151.05",
+        "defaultY": "-25.00",
+        "pitch": "A",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "14",
+        "defaultX": "210.04",
+        "defaultY": "-15.00",
+        "pitch": "C",
+        "duration": "3",
+        "tied": "None"
+    },
+    {
+        "measure": "14",
+        "defaultX": "262.36",
+        "defaultY": "-10.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "14",
+        "defaultX": "15.42",
+        "defaultY": "-120.00",
+        "pitch": "D",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "14",
+        "defaultX": "74.41",
+        "defaultY": "-120.00",
+        "pitch": "C",
+        "duration": "3",
+        "tied": "None"
+    },
+    {
+        "measure": "14",
+        "defaultX": "126.73",
+        "defaultY": "-135.00",
+        "pitch": "A",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "14",
+        "defaultX": "153.55",
+        "defaultY": "-135.00",
+        "pitch": "A",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "14",
+        "defaultX": "212.54",
+        "defaultY": "-120.00",
+        "pitch": "C",
+        "duration": "3",
+        "tied": "None"
+    },
+    {
+        "measure": "14",
+        "defaultX": "264.86",
+        "defaultY": "-120.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "15",
+        "defaultX": "12.92",
+        "defaultY": "-10.00",
+        "pitch": "D",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "15",
+        "defaultX": "75.56",
+        "defaultY": "-30.00",
+        "pitch": "G",
+        "duration": "12",
+        "tied": "None"
+    },
+    {
+        "measure": "15",
+        "defaultX": "15.42",
+        "defaultY": "-120.00",
+        "pitch": "D",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "15",
+        "defaultX": "78.42",
+        "defaultY": "-135.00",
+        "pitch": "G",
+        "duration": "12",
+        "tied": "None"
+    },
+    {
+        "measure": "16",
+        "defaultX": "12.92",
+        "defaultY": "-10.00",
+        "pitch": "D",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "16",
+        "defaultX": "73.29",
+        "defaultY": "-15.00",
+        "pitch": "C",
+        "duration": "3",
+        "tied": "None"
+    },
+    {
+        "measure": "16",
+        "defaultX": "126.82",
+        "defaultY": "-25.00",
+        "pitch": "A",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "16",
+        "defaultX": "154.26",
+        "defaultY": "-25.00",
+        "pitch": "A",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "16",
+        "defaultX": "214.63",
+        "defaultY": "-25.00",
+        "pitch": "A",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "16",
+        "defaultX": "15.42",
+        "defaultY": "-120.00",
+        "pitch": "D",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "16",
+        "defaultX": "75.79",
+        "defaultY": "-120.00",
+        "pitch": "C",
+        "duration": "3",
+        "tied": "None"
+    },
+    {
+        "measure": "16",
+        "defaultX": "129.32",
+        "defaultY": "-135.00",
+        "pitch": "A",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "16",
+        "defaultX": "156.76",
+        "defaultY": "-135.00",
+        "pitch": "A",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "16",
+        "defaultX": "217.13",
+        "defaultY": "-135.00",
+        "pitch": "A",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "17",
+        "defaultX": "50.67",
+        "defaultY": "-30.00",
+        "pitch": "G",
+        "duration": "6",
+        "tied": "None"
+    },
+    {
+        "measure": "17",
+        "defaultX": "117.84",
+        "defaultY": "-30.00",
+        "pitch": "G",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "17",
+        "defaultX": "144.17",
+        "defaultY": "-30.00",
+        "pitch": "G",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "17",
+        "defaultX": "170.49",
+        "defaultY": "-30.00",
+        "pitch": "G",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "17",
+        "defaultX": "228.42",
+        "defaultY": "-30.00",
+        "pitch": "G",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "17",
+        "defaultX": "254.74",
+        "defaultY": "-30.00",
+        "pitch": "G",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "17",
+        "defaultX": "281.07",
+        "defaultY": "-30.00",
+        "pitch": "G",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "17",
+        "defaultX": "307.40",
+        "defaultY": "-30.00",
+        "pitch": "G",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "17",
+        "defaultX": "53.18",
+        "defaultY": "-135.00",
+        "pitch": "G",
+        "duration": "6",
+        "tied": "None"
+    },
+    {
+        "measure": "17",
+        "defaultX": "120.34",
+        "defaultY": "-135.00",
+        "pitch": "G",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "17",
+        "defaultX": "146.67",
+        "defaultY": "-135.00",
+        "pitch": "G",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "17",
+        "defaultX": "172.99",
+        "defaultY": "-135.00",
+        "pitch": "G",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "17",
+        "defaultX": "230.92",
+        "defaultY": "-135.00",
+        "pitch": "G",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "17",
+        "defaultX": "257.24",
+        "defaultY": "-135.00",
+        "pitch": "G",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "17",
+        "defaultX": "283.57",
+        "defaultY": "-135.00",
+        "pitch": "G",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "17",
+        "defaultX": "309.90",
+        "defaultY": "-135.00",
+        "pitch": "G",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "18",
+        "defaultX": "12.92",
+        "defaultY": "-10.00",
+        "pitch": "D",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "18",
+        "defaultX": "72.44",
+        "defaultY": "-15.00",
+        "pitch": "C",
+        "duration": "3",
+        "tied": "None"
+    },
+    {
+        "measure": "18",
+        "defaultX": "125.23",
+        "defaultY": "-25.00",
+        "pitch": "A",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "18",
+        "defaultX": "152.29",
+        "defaultY": "-25.00",
+        "pitch": "A",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "18",
+        "defaultX": "211.82",
+        "defaultY": "-15.00",
+        "pitch": "C",
+        "duration": "3",
+        "tied": "None"
+    },
+    {
+        "measure": "18",
+        "defaultX": "264.61",
+        "defaultY": "-10.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "18",
+        "defaultX": "15.42",
+        "defaultY": "-120.00",
+        "pitch": "D",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "18",
+        "defaultX": "74.94",
+        "defaultY": "-120.00",
+        "pitch": "C",
+        "duration": "3",
+        "tied": "None"
+    },
+    {
+        "measure": "18",
+        "defaultX": "127.73",
+        "defaultY": "-135.00",
+        "pitch": "A",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "18",
+        "defaultX": "154.79",
+        "defaultY": "-135.00",
+        "pitch": "A",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "18",
+        "defaultX": "214.32",
+        "defaultY": "-120.00",
+        "pitch": "C",
+        "duration": "3",
+        "tied": "None"
+    },
+    {
+        "measure": "18",
+        "defaultX": "267.11",
+        "defaultY": "-120.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "19",
+        "defaultX": "12.92",
+        "defaultY": "-10.00",
+        "pitch": "D",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "19",
+        "defaultX": "76.40",
+        "defaultY": "-30.00",
+        "pitch": "G",
+        "duration": "12",
+        "tied": "None"
+    },
+    {
+        "measure": "19",
+        "defaultX": "15.42",
+        "defaultY": "-120.00",
+        "pitch": "D",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "19",
+        "defaultX": "79.27",
+        "defaultY": "-135.00",
+        "pitch": "G",
+        "duration": "12",
+        "tied": "None"
+    },
+    {
+        "measure": "20",
+        "defaultX": "12.92",
+        "defaultY": "-10.00",
+        "pitch": "D",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "20",
+        "defaultX": "73.86",
+        "defaultY": "-15.00",
+        "pitch": "C",
+        "duration": "3",
+        "tied": "None"
+    },
+    {
+        "measure": "20",
+        "defaultX": "127.90",
+        "defaultY": "-25.00",
+        "pitch": "A",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "20",
+        "defaultX": "155.61",
+        "defaultY": "-25.00",
+        "pitch": "A",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "20",
+        "defaultX": "216.55",
+        "defaultY": "-25.00",
+        "pitch": "A",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "20",
+        "defaultX": "15.42",
+        "defaultY": "-120.00",
+        "pitch": "D",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "20",
+        "defaultX": "76.36",
+        "defaultY": "-120.00",
+        "pitch": "C",
+        "duration": "3",
+        "tied": "None"
+    },
+    {
+        "measure": "20",
+        "defaultX": "130.40",
+        "defaultY": "-135.00",
+        "pitch": "A",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "20",
+        "defaultX": "158.11",
+        "defaultY": "-135.00",
+        "pitch": "A",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "20",
+        "defaultX": "219.05",
+        "defaultY": "-135.00",
+        "pitch": "A",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "21",
+        "defaultX": "50.67",
+        "defaultY": "-30.00",
+        "pitch": "G",
+        "duration": "6",
+        "tied": "None"
+    },
+    {
+        "measure": "21",
+        "defaultX": "108.57",
+        "defaultY": "-30.00",
+        "pitch": "G",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "21",
+        "defaultX": "131.26",
+        "defaultY": "-30.00",
+        "pitch": "G",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "21",
+        "defaultX": "153.95",
+        "defaultY": "-30.00",
+        "pitch": "G",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "21",
+        "defaultX": "203.88",
+        "defaultY": "-30.00",
+        "pitch": "G",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "21",
+        "defaultX": "226.57",
+        "defaultY": "-30.00",
+        "pitch": "G",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "21",
+        "defaultX": "249.27",
+        "defaultY": "-30.00",
+        "pitch": "G",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "21",
+        "defaultX": "271.96",
+        "defaultY": "-30.00",
+        "pitch": "G",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "21",
+        "defaultX": "53.18",
+        "defaultY": "-135.00",
+        "pitch": "G",
+        "duration": "6",
+        "tied": "None"
+    },
+    {
+        "measure": "21",
+        "defaultX": "111.07",
+        "defaultY": "-135.00",
+        "pitch": "G",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "21",
+        "defaultX": "133.76",
+        "defaultY": "-135.00",
+        "pitch": "G",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "21",
+        "defaultX": "156.45",
+        "defaultY": "-135.00",
+        "pitch": "G",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "21",
+        "defaultX": "206.38",
+        "defaultY": "-135.00",
+        "pitch": "G",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "21",
+        "defaultX": "229.07",
+        "defaultY": "-135.00",
+        "pitch": "G",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "21",
+        "defaultX": "251.77",
+        "defaultY": "-135.00",
+        "pitch": "G",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "21",
+        "defaultX": "274.46",
+        "defaultY": "-135.00",
+        "pitch": "G",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "22",
+        "defaultX": "12.92",
+        "defaultY": "-10.00",
+        "pitch": "D",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "22",
+        "defaultX": "64.24",
+        "defaultY": "-15.00",
+        "pitch": "C",
+        "duration": "3",
+        "tied": "None"
+    },
+    {
+        "measure": "22",
+        "defaultX": "109.74",
+        "defaultY": "-25.00",
+        "pitch": "A",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "22",
+        "defaultX": "133.07",
+        "defaultY": "-25.00",
+        "pitch": "A",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "22",
+        "defaultX": "184.39",
+        "defaultY": "-15.00",
+        "pitch": "C",
+        "duration": "3",
+        "tied": "None"
+    },
+    {
+        "measure": "22",
+        "defaultX": "229.90",
+        "defaultY": "-10.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "22",
+        "defaultX": "15.42",
+        "defaultY": "-120.00",
+        "pitch": "D",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "22",
+        "defaultX": "66.74",
+        "defaultY": "-120.00",
+        "pitch": "C",
+        "duration": "3",
+        "tied": "None"
+    },
+    {
+        "measure": "22",
+        "defaultX": "112.24",
+        "defaultY": "-135.00",
+        "pitch": "A",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "22",
+        "defaultX": "135.57",
+        "defaultY": "-135.00",
+        "pitch": "A",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "22",
+        "defaultX": "186.89",
+        "defaultY": "-120.00",
+        "pitch": "C",
+        "duration": "3",
+        "tied": "None"
+    },
+    {
+        "measure": "22",
+        "defaultX": "232.40",
+        "defaultY": "-120.00",
+        "pitch": "D",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "23",
+        "defaultX": "12.92",
+        "defaultY": "-10.00",
+        "pitch": "D",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "23",
+        "defaultX": "63.63",
+        "defaultY": "-30.00",
+        "pitch": "G",
+        "duration": "12",
+        "tied": "None"
+    },
+    {
+        "measure": "23",
+        "defaultX": "15.42",
+        "defaultY": "-120.00",
+        "pitch": "D",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "23",
+        "defaultX": "66.50",
+        "defaultY": "-135.00",
+        "pitch": "G",
+        "duration": "12",
+        "tied": "None"
+    },
+    {
+        "measure": "24",
+        "defaultX": "12.92",
+        "defaultY": "-10.00",
+        "pitch": "D",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "24",
+        "defaultX": "65.18",
+        "defaultY": "-15.00",
+        "pitch": "C",
+        "duration": "3",
+        "tied": "None"
+    },
+    {
+        "measure": "24",
+        "defaultX": "111.53",
+        "defaultY": "-25.00",
+        "pitch": "A",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "24",
+        "defaultX": "135.28",
+        "defaultY": "-25.00",
+        "pitch": "A",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "24",
+        "defaultX": "187.54",
+        "defaultY": "-25.00",
+        "pitch": "A",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "24",
+        "defaultX": "15.42",
+        "defaultY": "-120.00",
+        "pitch": "D",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "24",
+        "defaultX": "67.68",
+        "defaultY": "-120.00",
+        "pitch": "C",
+        "duration": "3",
+        "tied": "None"
+    },
+    {
+        "measure": "24",
+        "defaultX": "114.03",
+        "defaultY": "-135.00",
+        "pitch": "A",
+        "duration": "1",
+        "tied": "None"
+    },
+    {
+        "measure": "24",
+        "defaultX": "137.78",
+        "defaultY": "-135.00",
+        "pitch": "A",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "24",
+        "defaultX": "190.04",
+        "defaultY": "-135.00",
+        "pitch": "A",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "25",
+        "defaultX": "190.04",
+        "defaultY": "-135.00",
+        "pitch": "A",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "25",
+        "defaultX": "50.77",
+        "defaultY": "-30.00",
+        "pitch": "G",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "25",
+        "defaultX": "88.24",
+        "defaultY": "5.00",
+        "pitch": "G",
+        "duration": "8",
+        "tied": "None"
+    },
+    {
+        "measure": "25",
+        "defaultX": "88.24",
+        "defaultY": "5.00",
+        "pitch": "G",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "25",
+        "defaultX": "53.27",
+        "defaultY": "-135.00",
+        "pitch": "G",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "25",
+        "defaultX": "91.10",
+        "defaultY": "-105.00",
+        "pitch": "G",
+        "duration": "8",
+        "tied": "None"
+    },
+    {
+        "measure": "26",
+        "defaultX": "50.67",
+        "defaultY": "-5.00",
+        "pitch": "E",
+        "duration": "8",
+        "tied": "None"
+    },
+    {
+        "measure": "26",
+        "defaultX": "122.29",
+        "defaultY": "-15.00",
+        "pitch": "C",
+        "duration": "8",
+        "tied": "None"
+    },
+    {
+        "measure": "26",
+        "defaultX": "53.54",
+        "defaultY": "-105.00",
+        "pitch": "E",
+        "duration": "8",
+        "tied": "None"
+    },
+    {
+        "measure": "26",
+        "defaultX": "125.15",
+        "defaultY": "-120.00",
+        "pitch": "C",
+        "duration": "8",
+        "tied": "None"
+    },
+    {
+        "measure": "27",
+        "defaultX": "12.92",
+        "defaultY": "-10.00",
+        "pitch": "D",
+        "duration": "2",
+        "tied": "None"
+    },
+    {
+        "measure": "27",
+        "defaultX": "47.55",
+        "defaultY": "-25.00",
+        "pitch": "A",
+        "duration": "2",
+        "tied": "None"
+    },
+    {
+        "measure": "27",
+        "defaultX": "82.19",
+        "defaultY": "-30.00",
+        "pitch": "G",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "27",
+        "defaultX": "137.25",
+        "defaultY": "5.00",
+        "pitch": "G",
+        "duration": "8",
+        "tied": "None"
+    },
+    {
+        "measure": "27",
+        "defaultX": "15.42",
+        "defaultY": "-120.00",
+        "pitch": "D",
+        "duration": "2",
+        "tied": "None"
+    },
+    {
+        "measure": "27",
+        "defaultX": "50.05",
+        "defaultY": "-135.00",
+        "pitch": "A",
+        "duration": "2",
+        "tied": "None"
+    },
+    {
+        "measure": "27",
+        "defaultX": "84.69",
+        "defaultY": "-135.00",
+        "pitch": "G",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "27",
+        "defaultX": "140.11",
+        "defaultY": "-105.00",
+        "pitch": "G",
+        "duration": "8",
+        "tied": "None"
+    },
+    {
+        "measure": "28",
+        "defaultX": "18.42",
+        "defaultY": "5.00",
+        "pitch": "G",
+        "duration": "8",
+        "tied": "None"
+    },
+    {
+        "measure": "28",
+        "defaultX": "96.77",
+        "defaultY": "5.00",
+        "pitch": "G",
+        "duration": "8",
+        "tied": "None"
+    },
+    {
+        "measure": "28",
+        "defaultX": "21.28",
+        "defaultY": "-105.00",
+        "pitch": "G",
+        "duration": "8",
+        "tied": "None"
+    },
+    {
+        "measure": "28",
+        "defaultX": "99.63",
+        "defaultY": "-105.00",
+        "pitch": "G",
+        "duration": "8",
+        "tied": "None"
+    },
+    {
+        "measure": "29",
+        "defaultX": "99.63",
+        "defaultY": "-105.00",
+        "pitch": "G",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "29",
+        "defaultX": "58.89",
+        "defaultY": "-15.00",
+        "pitch": "C",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "29",
+        "defaultX": "104.49",
+        "defaultY": "20.00",
+        "pitch": "C",
+        "duration": "8",
+        "tied": "None"
+    },
+    {
+        "measure": "29",
+        "defaultX": "104.49",
+        "defaultY": "20.00",
+        "pitch": "C",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "29",
+        "defaultX": "61.39",
+        "defaultY": "-120.00",
+        "pitch": "C",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "29",
+        "defaultX": "107.35",
+        "defaultY": "-105.00",
+        "pitch": "C",
+        "duration": "8",
+        "tied": "None"
+    },
+    {
+        "measure": "30",
+        "defaultX": "12.56",
+        "defaultY": "10.00",
+        "pitch": "A",
+        "duration": "8",
+        "tied": "None"
+    },
+    {
+        "measure": "30",
+        "defaultX": "88.09",
+        "defaultY": "0.00",
+        "pitch": "F",
+        "duration": "6",
+        "tied": "None"
+    },
+    {
+        "measure": "30",
+        "defaultX": "154.76",
+        "defaultY": "-15.00",
+        "pitch": "C",
+        "duration": "2",
+        "tied": "None"
+    },
+    {
+        "measure": "30",
+        "defaultX": "15.42",
+        "defaultY": "-105.00",
+        "pitch": "A",
+        "duration": "8",
+        "tied": "None"
+    },
+    {
+        "measure": "30",
+        "defaultX": "90.59",
+        "defaultY": "-105.00",
+        "pitch": "F",
+        "duration": "6",
+        "tied": "None"
+    },
+    {
+        "measure": "30",
+        "defaultX": "157.26",
+        "defaultY": "-120.00",
+        "pitch": "C",
+        "duration": "2",
+        "tied": "None"
+    },
+    {
+        "measure": "31",
+        "defaultX": "12.00",
+        "defaultY": "-10.00",
+        "pitch": "D",
+        "duration": "16",
+        "tied": "None"
+    },
+    {
+        "measure": "31",
+        "defaultX": "17.82",
+        "defaultY": "-120.00",
+        "pitch": "D",
+        "duration": "16",
+        "tied": "None"
+    },
+    {
+        "measure": "32",
+        "defaultX": "50.67",
+        "defaultY": "-5.00",
+        "pitch": "E",
+        "duration": "8",
+        "tied": "None"
+    },
+    {
+        "measure": "32",
+        "defaultX": "134.66",
+        "defaultY": "-10.00",
+        "pitch": "D",
+        "duration": "8",
+        "tied": "None"
+    },
+    {
+        "measure": "32",
+        "defaultX": "53.54",
+        "defaultY": "-105.00",
+        "pitch": "E",
+        "duration": "8",
+        "tied": "None"
+    },
+    {
+        "measure": "32",
+        "defaultX": "137.52",
+        "defaultY": "-120.00",
+        "pitch": "D",
+        "duration": "8",
+        "tied": "None"
+    },
+    {
+        "measure": "33",
+        "defaultX": "12.00",
+        "defaultY": "-5.00",
+        "pitch": "E",
+        "duration": "16",
+        "tied": "None"
+    },
+    {
+        "measure": "33",
+        "defaultX": "17.82",
+        "defaultY": "-105.00",
+        "pitch": "E",
+        "duration": "16",
+        "tied": "None"
+    },
+    {
+        "measure": "34",
+        "defaultX": "17.82",
+        "defaultY": "-105.00",
+        "pitch": "E",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "34",
+        "defaultX": "64.85",
+        "defaultY": "-5.00",
+        "pitch": "E",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "34",
+        "defaultX": "116.76",
+        "defaultY": "-5.00",
+        "pitch": "E",
+        "duration": "6",
+        "tied": "None"
+    },
+    {
+        "measure": "34",
+        "defaultX": "180.06",
+        "defaultY": "15.00",
+        "pitch": "B",
+        "duration": "2",
+        "tied": "None"
+    },
+    {
+        "measure": "34",
+        "defaultX": "180.06",
+        "defaultY": "15.00",
+        "pitch": "B",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "34",
+        "defaultX": "67.35",
+        "defaultY": "-105.00",
+        "pitch": "E",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "34",
+        "defaultX": "119.26",
+        "defaultY": "-105.00",
+        "pitch": "E",
+        "duration": "6",
+        "tied": "None"
+    },
+    {
+        "measure": "34",
+        "defaultX": "182.56",
+        "defaultY": "-105.00",
+        "pitch": "B",
+        "duration": "2",
+        "tied": "None"
+    },
+    {
+        "measure": "35",
+        "defaultX": "12.00",
+        "defaultY": "10.00",
+        "pitch": "A",
+        "duration": "16",
+        "tied": "None"
+    },
+    {
+        "measure": "35",
+        "defaultX": "17.82",
+        "defaultY": "-105.00",
+        "pitch": "A",
+        "duration": "16",
+        "tied": "None"
+    },
+    {
+        "measure": "36",
+        "defaultX": "12.56",
+        "defaultY": "5.00",
+        "pitch": "G",
+        "duration": "8",
+        "tied": "None"
+    },
+    {
+        "measure": "36",
+        "defaultX": "100.01",
+        "defaultY": "5.00",
+        "pitch": "G",
+        "duration": "8",
+        "tied": "None"
+    },
+    {
+        "measure": "36",
+        "defaultX": "15.42",
+        "defaultY": "-105.00",
+        "pitch": "G",
+        "duration": "8",
+        "tied": "None"
+    },
+    {
+        "measure": "36",
+        "defaultX": "102.87",
+        "defaultY": "-105.00",
+        "pitch": "G",
+        "duration": "8",
+        "tied": "None"
+    },
+    {
+        "measure": "37",
+        "defaultX": "12.00",
+        "defaultY": "-5.00",
+        "pitch": "E",
+        "duration": "16",
+        "tied": "None"
+    },
+    {
+        "measure": "37",
+        "defaultX": "17.82",
+        "defaultY": "-105.00",
+        "pitch": "E",
+        "duration": "16",
+        "tied": "None"
+    },
+    {
+        "measure": "38",
+        "defaultX": "17.82",
+        "defaultY": "-105.00",
+        "pitch": "E",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "38",
+        "defaultX": "100.38",
+        "defaultY": "-5.00",
+        "pitch": "E",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "38",
+        "defaultX": "149.14",
+        "defaultY": "-5.00",
+        "pitch": "E",
+        "duration": "6",
+        "tied": "None"
+    },
+    {
+        "measure": "38",
+        "defaultX": "208.60",
+        "defaultY": "15.00",
+        "pitch": "B",
+        "duration": "2",
+        "tied": "None"
+    },
+    {
+        "measure": "38",
+        "defaultX": "208.60",
+        "defaultY": "15.00",
+        "pitch": "B",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "38",
+        "defaultX": "102.88",
+        "defaultY": "-105.00",
+        "pitch": "E",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "38",
+        "defaultX": "151.64",
+        "defaultY": "-105.00",
+        "pitch": "E",
+        "duration": "6",
+        "tied": "None"
+    },
+    {
+        "measure": "38",
+        "defaultX": "211.10",
+        "defaultY": "-105.00",
+        "pitch": "B",
+        "duration": "2",
+        "tied": "None"
+    },
+    {
+        "measure": "39",
+        "defaultX": "20.42",
+        "defaultY": "20.00",
+        "pitch": "C",
+        "duration": "8",
+        "tied": "None"
+    },
+    {
+        "measure": "39",
+        "defaultX": "99.97",
+        "defaultY": "10.00",
+        "pitch": "A",
+        "duration": "8",
+        "tied": "None"
+    },
+    {
+        "measure": "39",
+        "defaultX": "23.28",
+        "defaultY": "-105.00",
+        "pitch": "C",
+        "duration": "8",
+        "tied": "None"
+    },
+    {
+        "measure": "39",
+        "defaultX": "102.83",
+        "defaultY": "-105.00",
+        "pitch": "A",
+        "duration": "8",
+        "tied": "None"
+    },
+    {
+        "measure": "40",
+        "defaultX": "12.00",
+        "defaultY": "15.00",
+        "pitch": "B",
+        "duration": "16",
+        "tied": "None"
+    },
+    {
+        "measure": "40",
+        "defaultX": "17.82",
+        "defaultY": "-105.00",
+        "pitch": "B",
+        "duration": "16",
+        "tied": "None"
+    },
+    {
+        "measure": "41",
+        "defaultX": "12.00",
+        "defaultY": "-5.00",
+        "pitch": "E",
+        "duration": "16",
+        "tied": "None"
+    },
+    {
+        "measure": "41",
+        "defaultX": "17.82",
+        "defaultY": "-105.00",
+        "pitch": "E",
+        "duration": "16",
+        "tied": "None"
+    },
+    {
+        "measure": "42",
+        "defaultX": "17.82",
+        "defaultY": "-105.00",
+        "pitch": "E",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "42",
+        "defaultX": "64.06",
+        "defaultY": "-5.00",
+        "pitch": "E",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "42",
+        "defaultX": "115.18",
+        "defaultY": "-5.00",
+        "pitch": "E",
+        "duration": "6",
+        "tied": "None"
+    },
+    {
+        "measure": "42",
+        "defaultX": "177.52",
+        "defaultY": "15.00",
+        "pitch": "B",
+        "duration": "2",
+        "tied": "None"
+    },
+    {
+        "measure": "42",
+        "defaultX": "177.52",
+        "defaultY": "15.00",
+        "pitch": "B",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "42",
+        "defaultX": "66.56",
+        "defaultY": "-105.00",
+        "pitch": "E",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "42",
+        "defaultX": "117.68",
+        "defaultY": "-105.00",
+        "pitch": "E",
+        "duration": "6",
+        "tied": "None"
+    },
+    {
+        "measure": "42",
+        "defaultX": "180.02",
+        "defaultY": "-105.00",
+        "pitch": "B",
+        "duration": "2",
+        "tied": "None"
+    },
+    {
+        "measure": "43",
+        "defaultX": "12.00",
+        "defaultY": "10.00",
+        "pitch": "A",
+        "duration": "16",
+        "tied": "None"
+    },
+    {
+        "measure": "43",
+        "defaultX": "17.82",
+        "defaultY": "-105.00",
+        "pitch": "A",
+        "duration": "16",
+        "tied": "None"
+    },
+    {
+        "measure": "44",
+        "defaultX": "50.67",
+        "defaultY": "5.00",
+        "pitch": "G",
+        "duration": "8",
+        "tied": "None"
+    },
+    {
+        "measure": "44",
+        "defaultX": "158.62",
+        "defaultY": "5.00",
+        "pitch": "G",
+        "duration": "8",
+        "tied": "None"
+    },
+    {
+        "measure": "44",
+        "defaultX": "53.54",
+        "defaultY": "-105.00",
+        "pitch": "G",
+        "duration": "8",
+        "tied": "None"
+    },
+    {
+        "measure": "44",
+        "defaultX": "161.48",
+        "defaultY": "-105.00",
+        "pitch": "G",
+        "duration": "8",
+        "tied": "None"
+    },
+    {
+        "measure": "45",
+        "defaultX": "12.92",
+        "defaultY": "-10.00",
+        "pitch": "D",
+        "duration": "2",
+        "tied": "None"
+    },
+    {
+        "measure": "45",
+        "defaultX": "52.88",
+        "defaultY": "-5.00",
+        "pitch": "E",
+        "duration": "2",
+        "tied": "None"
+    },
+    {
+        "measure": "45",
+        "defaultX": "52.88",
+        "defaultY": "-5.00",
+        "pitch": "E",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "45",
+        "defaultX": "156.78",
+        "defaultY": "-5.00",
+        "pitch": "E",
+        "duration": "2",
+        "tied": "None"
+    },
+    {
+        "measure": "45",
+        "defaultX": "196.74",
+        "defaultY": "0.00",
+        "pitch": "F",
+        "duration": "2",
+        "tied": "None"
+    },
+    {
+        "measure": "45",
+        "defaultX": "196.74",
+        "defaultY": "0.00",
+        "pitch": "F",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "45",
+        "defaultX": "15.42",
+        "defaultY": "-120.00",
+        "pitch": "D",
+        "duration": "2",
+        "tied": "None"
+    },
+    {
+        "measure": "45",
+        "defaultX": "55.38",
+        "defaultY": "-105.00",
+        "pitch": "E",
+        "duration": "2",
+        "tied": "None"
+    },
+    {
+        "measure": "45",
+        "defaultX": "55.38",
+        "defaultY": "-105.00",
+        "pitch": "E",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "45",
+        "defaultX": "159.28",
+        "defaultY": "-105.00",
+        "pitch": "E",
+        "duration": "2",
+        "tied": "None"
+    },
+    {
+        "measure": "45",
+        "defaultX": "199.24",
+        "defaultY": "-105.00",
+        "pitch": "F",
+        "duration": "2",
+        "tied": "None"
+    },
+    {
+        "measure": "45",
+        "defaultX": "199.24",
+        "defaultY": "-105.00",
+        "pitch": "F",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "46",
+        "defaultX": "12.92",
+        "defaultY": "-10.00",
+        "pitch": "D",
+        "duration": "2",
+        "tied": "None"
+    },
+    {
+        "measure": "46",
+        "defaultX": "52.88",
+        "defaultY": "-5.00",
+        "pitch": "E",
+        "duration": "2",
+        "tied": "None"
+    },
+    {
+        "measure": "46",
+        "defaultX": "52.88",
+        "defaultY": "-5.00",
+        "pitch": "E",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "46",
+        "defaultX": "156.78",
+        "defaultY": "-5.00",
+        "pitch": "E",
+        "duration": "2",
+        "tied": "None"
+    },
+    {
+        "measure": "46",
+        "defaultX": "196.74",
+        "defaultY": "0.00",
+        "pitch": "F",
+        "duration": "2",
+        "tied": "None"
+    },
+    {
+        "measure": "46",
+        "defaultX": "196.74",
+        "defaultY": "0.00",
+        "pitch": "F",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "46",
+        "defaultX": "15.42",
+        "defaultY": "-120.00",
+        "pitch": "D",
+        "duration": "2",
+        "tied": "None"
+    },
+    {
+        "measure": "46",
+        "defaultX": "55.38",
+        "defaultY": "-105.00",
+        "pitch": "E",
+        "duration": "2",
+        "tied": "None"
+    },
+    {
+        "measure": "46",
+        "defaultX": "55.38",
+        "defaultY": "-105.00",
+        "pitch": "E",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "46",
+        "defaultX": "159.28",
+        "defaultY": "-105.00",
+        "pitch": "E",
+        "duration": "2",
+        "tied": "None"
+    },
+    {
+        "measure": "46",
+        "defaultX": "199.24",
+        "defaultY": "-105.00",
+        "pitch": "F",
+        "duration": "2",
+        "tied": "None"
+    },
+    {
+        "measure": "46",
+        "defaultX": "199.24",
+        "defaultY": "-105.00",
+        "pitch": "F",
+        "duration": "4",
+        "tied": "None"
+    },
+    {
+        "measure": "47",
+        "defaultX": "12.00",
+        "defaultY": "-5.00",
+        "pitch": "E",
+        "duration": "16",
+        "tied": "None"
+    },
+    {
+        "measure": "47",
+        "defaultX": "17.82",
+        "defaultY": "-105.00",
+        "pitch": "E",
+        "duration": "16",
+        "tied": "None"
+    }
+]
