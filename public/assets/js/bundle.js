@@ -60659,26 +60659,42 @@ const pitches = play.pitches();
 var scene, camera, renderer;
 
 // Keydown/Keyup differentiation.
-const isDown = {}
+var isDown = {};
+var resetIsDown;
+var alreadyHit = false;
+var multipleHits = 0;
 
 // Grid variables.
 var start, end, movingLines, setActiveIdx;
 var notes, notesMovement
-var numOfCols = 4;
+var numOfCols = 3;
 var originalMeshPositions;
 var lineVecs, linePos;
 var circles, originalColors;
 
 // Note frequency.
-var skipLines = 1;
-var totalNoteLine = 0; // each individual line
 var currNoteLine = 0; // going through the json
-var oneNote = true;
 var activePitches = [];
-var totalDuration, release;
+var release;
 
 // Read JSON data.
 var notesPerLine;
+
+// Score features.
+var totalScore = document.getElementById('score');
+var notesInRow = document.getElementById('notes-in-row');
+var multiplier = document.getElementById('multiplier');
+var countdown = document.getElementById('countdown');
+var pauseTrack = false;
+var pause = document.getElementById('pause');
+var count = 0;
+var scoreCount = 0;
+var multiplierCount = 1;
+totalScore.innerText = 0;
+notesInRow.innerText = 0;
+multiplier.innerText = "1x";
+
+var countdownAmt, countDownInterval;
 
 getMenuChoice();
 
@@ -60712,10 +60728,10 @@ function getMenuChoice() {
         });
     });
     //// remove during production
-    notesData.getMusicJSON($, function (data) {
-        notesPerLine = data;
-        init();
-    });
+    // notesData.getMusicJSON($, function (data) {
+    //     notesPerLine = data;
+    //     init();
+    // });
     ////
 }
 
@@ -60955,14 +60971,10 @@ function initializeGrid() {
         // reused
         var posAvgX = (linePos[i].x + linePos[i + 1].x) / 2;
 
-        // adjust positions to align above grid
-        // linePositionZ += 0.08;
-
         ring.position.set(posAvgX, linePositionY + objOffsetY - 0.2, linePositionZ + 0.2);
 
         rings.push(ring);
         scene.add(ring);
-
 
         var geometry = new THREE.CircleGeometry(1, 32);
         var material = new THREE.MeshBasicMaterial({
@@ -60990,7 +61002,7 @@ function initializeGrid() {
         if (duration_dist == 0) {
             for (var i = 0; i < notesPerLine[currNoteLine].length; i++) {
                 duration_dist = notesPerLine[currNoteLine][i].duration - 2;
-                switch(notesPerLine[currNoteLine][i].pitch) {
+                switch (notesPerLine[currNoteLine][i].pitch) {
                     case "A":
                         pitches[game.checkArrElement(pitches, 0)] = true;
                         break;
@@ -61013,7 +61025,7 @@ function initializeGrid() {
                         pitches[game.checkArrElement(pitches, 6)] = true;
                         break;
                 }
-            }            
+            }
             currNoteLine++;
         } else {
             duration_dist -= 2;
@@ -61025,11 +61037,60 @@ function initializeGrid() {
 
     currNoteLine = -1;
     ////////////////////////
+    // set isdown to false initially
+    for (var i = 0; i < numOfCols; i++) {
+        isDown[i] = false;
+    }
+    resetIsDown = isDown;
 
     document.body.addEventListener('keydown', onKeyDown, false);
     document.body.addEventListener('keyup', onKeyUp, false);
     renderer.setClearColor(0x000000, 0);
+    pause.addEventListener('click', () => {
+        if (pauseTrack) {
+            pauseTrack = false;
+            pause.innerText = "Pause";
+            countdownAmt = 3;
+            countdown.innerText = countdownAmt;
+            countDownInterval = setInterval(countDown, 1000);
+        } else {
+            pauseTrack = true;
+            pause.innerText = "Resume";
+            clearInterval(countDownInterval);
+            countdown.innerHTML = "";
+            animate()
+        }
+    });
     animate();
+}
+
+function countDown() {
+    countdownAmt--;
+    if (countdownAmt == 0) {
+        clearInterval(countDownInterval);
+        countdown.innerHTML = "";
+        animate();
+    } else {
+        countdown.innerText = countdownAmt;
+    }
+}
+
+function checkCollision() {
+    let hitBound = activePitches[currNoteLine - movingLines.length + 1];
+    if (JSON.stringify(hitBound) == JSON.stringify(resetIsDown) && !alreadyHit) {
+        for (var i = 0; i < hitBound.length; i++) {
+            if (hitBound[i]) {
+                multipleHits++;
+            }
+        }
+        alreadyHit = true;
+        count++;
+    } else if (multipleHits > 0) {
+        multipleHits--;
+    } else {
+        count = 0;
+        multipleHits = 0;
+    }
 }
 
 function onKeyDown() {
@@ -61037,33 +61098,29 @@ function onKeyDown() {
         case 40: // up
             camera.translateZ(0.1);
             break;
-        case 39: // right
-            camera.translateX(0.1);
-            break;
         case 38: // down
             camera.translateZ(-0.1);
-            break;
-        case 37: // left
-            camera.translateX(-0.1);
             break;
             // Game Controls
         case 65: // a
             lightButton(0, true);
-            if (isDown[event.keyCode]) {
+            if (isDown[0]) {
                 return;
             }
-            isDown[event.keyCode] = true;
+            isDown[0] = true;
+            resetIsDown[0] = true;
             play.playTone(pitches.pitchD)
             break;
         case 83: // s
-            if (numOfCols < 3) {
+            if (numOfCols < 2) {
                 return;
             }
             lightButton(1, true);
-            if (isDown[event.keyCode]) {
+            if (isDown[1]) {
                 return;
             }
-            isDown[event.keyCode] = true;
+            isDown[1] = true;
+            resetIsDown[1] = true;
             play.playTone(pitches.pitchE)
             break;
         case 68: // d
@@ -61071,10 +61128,11 @@ function onKeyDown() {
                 return;
             }
             lightButton(2, true);
-            if (isDown[event.keyCode]) {
+            if (isDown[2]) {
                 return;
             }
-            isDown[event.keyCode] = true;
+            isDown[2] = true;
+            resetIsDown[2] = true;
             play.playTone(pitches.pitchF)
             break;
         case 70: // f
@@ -61082,10 +61140,11 @@ function onKeyDown() {
                 return;
             }
             lightButton(3, true);
-            if (isDown[event.keyCode]) {
+            if (isDown[3]) {
                 return;
             }
-            isDown[event.keyCode] = true;
+            isDown[3] = true;
+            resetIsDown[3] = true;
             play.playTone(pitches.pitchG)
             break;
         case 71: // g
@@ -61093,35 +61152,15 @@ function onKeyDown() {
                 return;
             }
             lightButton(4, true);
-            if (isDown[event.keyCode]) {
+            if (isDown[4]) {
                 return;
             }
-            isDown[event.keyCode] = true;
+            isDown[4] = true;
+            resetIsDown[4] = true;
             play.playTone(pitches.pitchA)
             break;
-        case 72: // h
-            if (numOfCols < 6) {
-                return;
-            }
-            lightButton(5, true);
-            if (isDown[event.keyCode]) {
-                return;
-            }
-            isDown[event.keyCode] = true;
-            play.playTone(pitches.pitchB)
-            break;
-        case 74: // j
-            if (numOfCols < 7) {
-                return;
-            }
-            lightButton(6, true);
-            if (isDown[event.keyCode]) {
-                return;
-            }
-            isDown[event.keyCode] = true;
-            play.playTone(pitches.pitchC)
-            break;
     }
+    checkCollision();
 }
 
 function onKeyUp() {
@@ -61130,7 +61169,7 @@ function onKeyUp() {
         case 65: // a
             lightButton(0, false);
             play.stopTone(pitches.pitchD);
-            isDown[event.keyCode] = false;
+            isDown[0] = false;
             break;
         case 83: // s
             if (numOfCols < 2) {
@@ -61138,7 +61177,7 @@ function onKeyUp() {
             }
             lightButton(1, false);
             play.stopTone(pitches.pitchE);
-            isDown[event.keyCode] = false;
+            isDown[1] = false;
             break;
         case 68: // d
             if (numOfCols < 3) {
@@ -61146,7 +61185,7 @@ function onKeyUp() {
             }
             lightButton(2, false);
             play.stopTone(pitches.pitchF);
-            isDown[event.keyCode] = false;
+            isDown[2] = false;
             break;
         case 70: // f
             if (numOfCols < 4) {
@@ -61154,7 +61193,7 @@ function onKeyUp() {
             }
             lightButton(3, false);
             play.stopTone(pitches.pitchG);
-            isDown[event.keyCode] = false;
+            isDown[3] = false;
             break;
         case 71: // g
             if (numOfCols < 5) {
@@ -61162,23 +61201,7 @@ function onKeyUp() {
             }
             lightButton(4, false);
             play.stopTone(pitches.pitchA);
-            isDown[event.keyCode] = false;
-            break;
-        case 72: // h
-            if (numOfCols < 6) {
-                return;
-            }
-            lightButton(5, false);
-            play.stopTone(pitches.pitchB);
-            isDown[event.keyCode] = false;
-            break;
-        case 74: // j
-            if (numOfCols < 7) {
-                return;
-            }
-            lightButton(6, false);
-            play.stopTone(pitches.pitchC);
-            isDown[event.keyCode] = false;
+            isDown[4] = false;
             break;
     }
 }
@@ -61193,18 +61216,15 @@ function lightButton(buttonIdx, keydown) {
 function animate() {
     // creates a loop to redraw the renderer
     // every time the screen refreshes
-    requestAnimationFrame(animate);
-    render();
+    var id = requestAnimationFrame(animate);
+    if (currNoteLine >= activePitches.length + movingLines.length || pauseTrack) {
+        cancelAnimationFrame(id);
+    } else {
+        render();
+    }
 }
 
 function render() {
-
-    // return early to pause the game
-    if (currNoteLine >= activePitches.length) {
-        console.log("end of song");
-        return;
-    }
-
     // Bases for mesh should be 100 and line is 10.
     // 10 : 100, 5 : 200, 2.5 : 400, and so on for mesh and line speed factors.
     // Change the grid speed by decimals if desired, faster is a smaller value and slower is larger.
@@ -61244,9 +61264,13 @@ function render() {
             if (mesh.position.y <= -2.2) {
                 mesh.position.set(originalMeshPositions[j].x, originalMeshPositions[j].y, originalMeshPositions[j].z);
                 release = true;
-                    mesh.traverse(function (mesh) {
-                        mesh.visible = false;
-                    });      
+                // reset the notes in a row count
+                if (mesh.visible && !alreadyHit) {
+                    count = 0;
+                }
+                mesh.traverse(function (mesh) {
+                    mesh.visible = false;
+                });
             } else {
                 mesh.position.x -= notesMovement[i][j].x / meshSpeedFactor;
                 mesh.position.y -= notesMovement[i][j].y / meshSpeedFactor;
@@ -61254,7 +61278,7 @@ function render() {
                 release = false;
             }
 
-            if (i==currNoteLine%movingLines.length && activePitches[currNoteLine][j]) {
+            if (i == currNoteLine % movingLines.length && activePitches[currNoteLine][j]) {
                 mesh.traverse(function (mesh) {
                     mesh.visible = true;
                 });
@@ -61280,13 +61304,20 @@ function render() {
             }
 
         } else if (release) {
-            // A slight hack to ensure the lines are set to zero and visible ONLY
+            // Ensure the lines are set to zero and visible ONLY
             // when release turns true (i.e. the notes hit the bottom of the grid and reset)
             line.traverse(function (line) {
                 line.visible = true;
             });
             line.position.set(0, 0, 0);
             currNoteLine++;
+            resetIsDown = new Array(numOfCols).fill(false);
+            alreadyHit = false;
+            notesInRow.innerText = count;
+            multiplierCount = (Math.floor((count / 10) + 1) > 4) ? 4 : Math.floor((count / 10) + 1);
+            scoreCount += count * multiplierCount;
+            multiplier.innerText = (multiplierCount > 4) ? "4x" : multiplierCount + "x";
+            totalScore.innerText = scoreCount;
         } else {
             line.scale.x = helpers.getOriginalXScale();
             line.traverse(function (line) {
