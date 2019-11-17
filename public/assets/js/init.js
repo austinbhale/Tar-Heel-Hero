@@ -70,10 +70,12 @@ function getMenuChoice() {
     });
 
     var menu = document.getElementById("main-menu");
+    var gameFeatures = document.getElementById("game-features");
 
     var playBtn = document.getElementById('play-btn');
     playBtn.addEventListener('click', () => {
         menu.style.display = "none";
+        gameFeatures.style.display = "block";
         notesData.getMusicJSON($, function (data) {
             notesPerLine = data;
             init();
@@ -261,9 +263,7 @@ function initializeGrid() {
 
     originalMeshPositions = [];
     var colColors = [
-        0x00FF00, 0xFF0000, 0xFFFF00, 0x0000FF,
-        0xFF7F00, 0x9400D3, 0x4B0082
-    ]
+        0x00FF00, 0xFF0000, 0xFFFF00, 0x0000FF, 0xFF7F00]
 
     for (var i = 0; i < numMovingLines; i++) {
         notes[i] = [];

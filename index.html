@@ -7,61 +7,139 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tar Heel Hero</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Odibee+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="public/assets/css/styles.css">
     <!-- remove for production -->
     <link rel="icon" href="data:;base64,iVBORw0KGgo=">
 </head>
 
 <body>
-    <div class="instructions-ctr hide" id="instructions-ctr">
+    <!-- <div class="instructions-ctr hide" id="instructions-ctr">
         <h1>How To Play</h1>
         <p>These are the instructions.</p>
-    </div>
+    </div> -->
     <div id="main-menu" class="main-menu">
-        <i id="instructions" class="fa fa-info-circle" aria-hidden="true"></i>
-        <h1 class="title">Tar Heel Hero</h1>
-        <h3 class="diff-title">Difficulty</h3>
-        <div class="difficulty-ctr">
-            <ul class="difficulty-list" id="difficulty-list">
-                <li>
-                    <img class="guitar-img" src="public/assets/images/guitar.png" alt="">
-                    <p class="single-column-mode">Single-Column Mode</p>
-                </li>
-                <li>
-                    <img class="guitar-img" src="public/assets/images/guitar.png" alt="">
-                    <p class="2-column-mode">2-Column Mode</p>
-                </li>
-                <li id="default-diff">
-                    <img class="guitar-img" src="public/assets/images/guitar.png" alt="">
-                    <p class="2-column-mode">Easy</p>
-                </li>
-                <li>
-                    <img class="guitar-img" src="public/assets/images/guitar.png" alt="">
-                    <p class="2-column-mode">Medium</p>
-                </li>
-                <li>
-                    <img class="guitar-img" src="public/assets/images/guitar.png" alt="">
-                    <p class="2-column-mode">Hard</p>
-                </li>
-            </ul>
-        </div>
-        <div class="song-ctr">
-            <h3>Song</h3>
-            <select name="song-select" id="song-select">
-                <option value="thunderstruck">Come A Little Closer - Cage the Elephant</option>
-            </select>
-        </div>
-        <div class="song-ctr">
-            <h3>Venue</h3>
-            <select name="venue-select" id="venue-select">
-                <option value="concert">Concert</option>
-            </select>
-        </div>
-        <div class="play-ctr">
-            <button id="play-btn">Play</button>
+        <ul class="serv">
+            <li class="github"><a href="https://github.com/austinbhale/Tar-Heel-Hero"><img
+                        src="./public/assets/images/GitHub-Mark-64px.png" alt="Github"></a></li>
+            <li class="title">
+                <a href="">
+                    <h1>TaR HeeL HeRO</h1>
+                </a>
+            </li>
+            <li class="instructionsBtn" id="instructions"><a href="instructions.html">
+                    <h2>How to Play?</h2>
+                </a></li>
+        </ul>
+        <div class="content-ctr">
+            <h3 class="diff-title">Difficulty</h3>
+            <hr>
+            <div class="difficulty-ctr">
+                <ul class="difficulty-list" id="difficulty-list">
+                    <li>
+                        <img class="guitar-img" src="public/assets/images/guitar.png" alt="">
+                        <p class="single-column-mode">Single-Column Mode</p>
+                    </li>
+                    <li>
+                        <img class="guitar-img" src="public/assets/images/guitar.png" alt="">
+                        <p class="2-column-mode">2-Column Mode</p>
+                    </li>
+                    <li id="default-diff">
+                        <img class="guitar-img" src="public/assets/images/guitar.png" alt="">
+                        <p class="2-column-mode">Easy</p>
+                    </li>
+                    <li>
+                        <img class="guitar-img" src="public/assets/images/guitar.png" alt="">
+                        <p class="2-column-mode">Medium</p>
+                    </li>
+                    <li>
+                        <img class="guitar-img" src="public/assets/images/guitar.png" alt="">
+                        <p class="2-column-mode">Hard</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="song-ctr">
+                <h3>Song</h3>
+                <hr>
+                <div class="row">
+                    <div class="col">
+                        <ul class="song-list" id="song-list">
+                            <li><a>Come A Little Closer - Cage the Elephant</a>
+                                <p>stars - high score</p>
+                            </li>
+                            <li><a>Come A Little Closer - Cage the Elephant</a>
+                                <p>stars - high score</p>
+                            </li>
+                            <li><a>Come A Little Closer - Cage the Elephant</a>
+                                <p>stars - high score</p>
+                            </li>
+                            <li><a>Come A Little Closer - Cage the Elephant</a>
+                                <p>stars - high score</p>
+                            </li>
+                            <li><a>Come A Little Closer - Cage the Elephant</a>
+                                <p>stars - high score</p>
+                            </li>
+                            <li><a>Come A Little Closer - Cage the Elephant</a>
+                                <p>stars - high score</p>
+                            </li>
+                            <li><a>Come A Little Closer - Cage the Elephant</a>
+                                <p>stars - high score</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <ul class="img-list">
+                            <div class="row">
+                                <div class="col">
+                                    <li><img src="./public/assets/images/come-a-little-closer.jpg"
+                                            alt="Come a Little Closer"></li>
+                                </div>
+                                <div class="col">
+                                    <p>Song Stats</p>
+                                </div>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="venue-ctr">
+                <h3>Venue</h3>
+                <hr>
+                <div class="venue-list-ctr">
+                    <ul class="venue-list">
+                        <li>
+                            <img src="./public/assets/images/concert.jpeg" alt="Concert">
+                            Random
+                        </li>
+                        <li>
+                            <img src="./public/assets/images/concert.jpeg" alt="Concert">
+                            Concert
+                        </li>
+                        <li>
+                            <img src="./public/assets/images/concert-red.jpeg" alt="Concert">
+                            Concert
+                        </li>
+                        <li>
+                            <img src="./public/assets/images/concert.jpeg" alt="Concert">
+                            Concert
+                        </li>
+                        <li>
+                            <img src="./public/assets/images/concert.jpeg" alt="Concert">
+                            Concert
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- <div>
+                <p>Midi enabled?</p>
+            </div> -->
+            <div class="buttons">
+                    <a id="play-btn" class="enter">Play Song Mode</a>
+                    <a id="song-btn" class="enter">Play Guitar Mode</a>
+            </div>
         </div>
     </div>
-    <div class="game-features">
+    <div class="game-features" id="game-features">
         <p>Total score: <span id="score"></span></p>
         <p>Notes in a row: <span id="notes-in-row"></span></p>
         <p>Mulitplier: <span id="multiplier"></span></p>

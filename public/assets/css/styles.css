@@ -2,12 +2,29 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow: hidden;
+    overflow: auto;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: 'guitarHero';
+    src: url('./nightmare_hero_normal-webfont.woff') format('woff'),
+        /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+        url('./nightmare_hero_normal-webfont.woff2') format('woff'),
+        url('./Nightmare_Hero_Normal.ttf') format('truetype');
+    /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
 }
 
 body {
     margin: 0;
     height: 100vh;
+    font-size: 1.5em;
+    font-family: 'Odibee Sans', cursive;
+    letter-spacing: 0.5px;
 }
 
 canvas {
@@ -19,23 +36,57 @@ canvas {
     height: 100%;
     width: 100%;
     z-index: 1;
-    background-color: black;
+    background: url('../images/concert.jpeg');
+    background-repeat: no-repeat;
+    background-size: auto;
     color: #99badd;
+}
+
+.serv {
+    display: flex;
+    flex-wrap: wrap;
+    /* padding-left: 0; */
+}
+
+.serv li {
+    list-style: none;
+    flex: 0 0 33.333333%;
+    font-family: guitarHero;
+    /* max-width: calc(33.333%); */
 }
 
 .title {
     text-align: center;
-    margin-bottom: 50px;
+    font-size: 1.3em;
 }
 
-.diff-title {
-    text-align: center;
+.github {
+    text-align: left;
+    padding-left: 10px;
+    padding-top: 30px;
+}
+
+.github a img {
+    width: 43px;
+}
+
+.instructionsBtn {
+    text-align: right;
+    padding-right: 10px;
+}
+
+.content-ctr {
+    background-color: rgb(0, 0, 0, 0.85);
+    border-radius: 1%;
+    width: 80%;
+    padding: 25px;
+    margin: 0 auto;
 }
 
 .difficulty-ctr {
     display: flex;
     justify-content: center;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 .difficulty-ctr ul {
@@ -64,31 +115,12 @@ canvas {
     height: auto;
 }
 
-.song-ctr {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-.play-ctr {
-    text-align: center;
-}
-
-#instructions {
+.instructions {
     cursor: pointer;
-    position: absolute;
+    position: relative;
+    float: right;
     right: 0;
-    font-size: 30px;
     margin: 10px 20px;
-}
-
-#instructions-ctr {
-    position: absolute;
-    bottom: 0;
-    text-align: center;
-    width: 100%;
-    height: 80%;
-    background-color: blue;
-    z-index: 2;
 }
 
 .hide {
@@ -96,5 +128,202 @@ canvas {
 }
 
 .game-features {
+    display: none;
     position: absolute;
+}
+
+.song-ctr,
+.venue-ctr {
+    /* text-align: center; */
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.play-ctr {
+    text-align: center;
+}
+
+.song-list {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    overflow-y: scroll;
+    background-color: rgba(128, 128, 128, 0.7);
+}
+
+.song-list li {
+    cursor: pointer;
+    padding: 5px;
+    border-bottom: solid black 1px;
+    border-top: solid black 1px;
+    color: rgb(0, 0, 0, 0.8);
+}
+
+.song-list li:nth-child(1) {
+    background-color: #663399bb;
+}
+
+.img-list {
+    display: table;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    /* background-color: rgba(128, 128, 128, 0.7); */
+}
+
+.img-list li {
+    height: 100%;
+}
+
+.img-list li img {
+    width: 80%;
+}
+
+.song-list::-webkit-scrollbar,
+.venue-list-ctr::-webkit-scrollbar {
+    width: .4em;
+    border-radius: 50%;
+}
+
+.song-list::-webkit-scrollbar-track,
+.venue-list-ctr::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: rgba(128, 128, 128, 0.7);
+}
+
+.song-list::-webkit-scrollbar-thumb,
+.venue-list-ctr::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+}
+
+#venue-select {
+    width: 80%;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    height: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+
+    /* Desktop */
+    .col {
+        flex: 1;
+    }
+}
+
+@media only screen and (max-width: 970px) {
+    .title {
+        font-size: 0.9em;
+    }
+
+    .instructionsBtn {
+        font-size: 0.7em;
+    }
+
+    .github {
+        padding-top: 15px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .title {
+        font-size: 0.7em;
+    }
+}
+
+.venue-list-ctr {
+    overflow-x: auto;
+}
+
+/* ul */
+.venue-list {
+    list-style: none;
+    /* margin: 12px; */
+    display: inline-flex;
+    height: 200px;
+    background-color: rgba(128, 128, 128, 0.7);
+
+}
+
+/* li */
+.venue-list li {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    /* margin: 15px; */
+    width: 150px;
+    padding: 10px;
+    border: solid rgb(0, 0, 0, 0.8) 2px;
+    cursor: pointer;
+    color: rgb(0, 0, 0, 0.8);
+}
+
+.venue-list li:nth-child(1) {
+    background-color: #663399bb;
+}
+
+.venue-list li img {
+    width: 150px;
+    max-height: 80px;
+}
+
+hr {
+    width: 100%;
+    margin: 5px 0 20px 0;
+    color: rgba(128, 128, 128, 0.7);
+    border-color: rgba(128, 128, 128, 0.7);
+    background-color: rgba(128, 128, 128, 0.7);
+}
+
+.buttons {
+    text-align: center;
+}
+
+.enter {
+    display: inline-block;
+    cursor: pointer;
+    width: 35%;
+    padding: 0.3em 1.2em;
+    margin: 0.5em 2em;
+    border: 0.1em solid rgba(255, 255, 255, 0);
+    border-radius: 2em;
+    box-sizing: border-box;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.2s;
+}
+
+.enter:hover {
+    background-color: #663399bb;
+}
+
+#play-btn {
+    color: #00FF00;
+    border-color: #00FF00;
+}
+
+#song-btn {
+    color: #FF7F00;
+    border-color: #FF7F00;
+}
+
+@media all and (max-width:30em) {
+    .enter {
+        display: block;
+        margin: 0.2em auto;
+    }
 }
