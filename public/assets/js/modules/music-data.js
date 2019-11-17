@@ -32,5 +32,10 @@ module.exports = {
 
             callback(notesPerLine);
         });
+    },
+    getActivePitchesJSON: function ($, callback) {
+        $.getJSON("helpers/sheet-music/come-a-little-closer/active-pitches.json", function (data) {
+            callback(data);
+        });
     }
 }

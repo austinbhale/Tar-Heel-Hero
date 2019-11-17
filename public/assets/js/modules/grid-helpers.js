@@ -34,5 +34,19 @@ module.exports = {
     },
     getOriginalXScale: function() {
         return ogXScale;
+    },
+    getSong: function(idx) {
+        var songs = [
+            "/public/assets/audio/come-a-little-closer.mp3"
+        ];
+        return (idx ==0) ? songs[~~(songs.length * Math.random())] : songs[idx-1];
+    },
+    getStage: function(idx) {
+        var venues = [
+            "public/assets/images/concert.jpeg",
+            "public/assets/images/the-big-stage.jpg",
+            "public/assets/images/concert-red.jpeg"
+        ];
+        return (idx ==0) ? venues[~~(venues.length * Math.random())] : venues[idx-1];
     }
 }

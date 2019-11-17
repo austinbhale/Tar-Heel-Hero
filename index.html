@@ -23,7 +23,7 @@
             <li class="github"><a href="https://github.com/austinbhale/Tar-Heel-Hero"><img
                         src="./public/assets/images/GitHub-Mark-64px.png" alt="Github"></a></li>
             <li class="title">
-                <a href="">
+                <a href="/">
                     <h1>TaR HeeL HeRO</h1>
                 </a>
             </li>
@@ -64,7 +64,16 @@
                 <div class="row">
                     <div class="col">
                         <ul class="song-list" id="song-list">
+                            <li id="default-song"><a>Random Song</a>
+                                <p>???</p>
+                            </li>
                             <li><a>Come A Little Closer - Cage the Elephant</a>
+                                <p>stars - high score</p>
+                            </li>
+                            <!-- <li><a>Come A Little Closer - Cage the Elephant</a>
+                                <p>stars - high score</p>
+                            </li> -->
+                            <!-- <li><a>Come A Little Closer - Cage the Elephant</a>
                                 <p>stars - high score</p>
                             </li>
                             <li><a>Come A Little Closer - Cage the Elephant</a>
@@ -78,21 +87,19 @@
                             </li>
                             <li><a>Come A Little Closer - Cage the Elephant</a>
                                 <p>stars - high score</p>
-                            </li>
-                            <li><a>Come A Little Closer - Cage the Elephant</a>
-                                <p>stars - high score</p>
-                            </li>
-                            <li><a>Come A Little Closer - Cage the Elephant</a>
-                                <p>stars - high score</p>
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
                     <div class="col">
                         <ul class="img-list">
                             <div class="row">
-                                <div class="col">
+                                <div class="col" id="album-list">
+                                    <li id="default-img"><img src="./public/assets/images/random.jpg"
+                                        alt="Come a Little Closer"></li>
                                     <li><img src="./public/assets/images/come-a-little-closer.jpg"
                                             alt="Come a Little Closer"></li>
+                                    <!-- <li><img src="./public/assets/images/random.jpg"
+                                            alt="Come a Little Closer"></li> -->
                                 </div>
                                 <div class="col">
                                     <p>Song Stats</p>
@@ -106,26 +113,22 @@
                 <h3>Venue</h3>
                 <hr>
                 <div class="venue-list-ctr">
-                    <ul class="venue-list">
-                        <li>
-                            <img src="./public/assets/images/concert.jpeg" alt="Concert">
+                    <ul class="venue-list" id="venue-list">
+                        <li id="default-venue">
+                            <img src="./public/assets/images/random.jpg" alt="Random">
                             Random
                         </li>
                         <li>
-                            <img src="./public/assets/images/concert.jpeg" alt="Concert">
-                            Concert
+                            <img src="./public/assets/images/concert.jpeg" alt="Debut Stage">
+                            Debut Stage
                         </li>
                         <li>
-                            <img src="./public/assets/images/concert-red.jpeg" alt="Concert">
-                            Concert
+                            <img src="./public/assets/images/the-big-stage.jpg" alt="The Big Stage">
+                            The Big Stage
                         </li>
                         <li>
-                            <img src="./public/assets/images/concert.jpeg" alt="Concert">
-                            Concert
-                        </li>
-                        <li>
-                            <img src="./public/assets/images/concert.jpeg" alt="Concert">
-                            Concert
+                            <img src="./public/assets/images/concert-red.jpeg" alt="West Coast">
+                            West Coast
                         </li>
                     </ul>
                 </div>
@@ -134,8 +137,8 @@
                 <p>Midi enabled?</p>
             </div> -->
             <div class="buttons">
-                    <a id="play-btn" class="enter">Play Song Mode</a>
-                    <a id="song-btn" class="enter">Play Guitar Mode</a>
+                <a id="play-btn" class="enter">Play Song Mode</a>
+                <a id="song-btn" class="enter">Play Guitar Mode</a>
             </div>
         </div>
     </div>
@@ -151,4 +154,5 @@
 <script src='https://surikov.github.io/webaudiofontdata/sound/0300_LesPaul_sf2.js'></script>
 <!-- Use init.js for development -->
 <script type="module" src="public/assets/js/bundle.js"></script>
+
 </html>

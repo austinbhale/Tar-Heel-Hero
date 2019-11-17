@@ -60695,6 +60695,11 @@ notesInRow.innerText = 0;
 multiplier.innerText = "1x";
 
 var countdownAmt, countDownInterval;
+var audio;
+
+var guitarMode;
+var venueIndex = 0;
+var songIndex = 0;
 
 getMenuChoice();
 
@@ -60707,27 +60712,91 @@ function getMenuChoice() {
 
     var diffList = document.getElementById('difficulty-list');
     var target = document.getElementById('default-diff');
+    var oldTarget = target;
     diffList.addEventListener('click', (event) => {
-        target.children[0].style.visibility = "hidden";
 
         target = event.target.closest('li');
+        if (target == undefined) {
+            return;
+        }
+        oldTarget.children[0].style.visibility = "hidden";
         target.children[0].style.visibility = "visible";
-
+        oldTarget = target;
         const index = [...target.parentElement.children].indexOf(target)
         numOfCols = index + 1;
     });
 
+    var songList = document.getElementById('song-list');
+    var songTarget = document.getElementById('default-song');
+    var oldSongTarget = songTarget;
+    var oldSongIdx = [...songTarget.parentElement.children].indexOf(songTarget);
+    songList.addEventListener('click', (event) => {
+        songTarget = event.target.closest('li');
+        if (songTarget == undefined) {
+            return;
+        }
+        oldSongTarget.style.background = "none";
+        songTarget.style.backgroundColor = "#663399bb";
+        oldSongTarget = songTarget;
+        songIndex = [...songTarget.parentElement.children].indexOf(songTarget);
+
+        var imgs = document.getElementById("album-list");
+        imgs.children[oldSongIdx].id = "";
+        imgs.children[songIndex].id = "default-img";
+        oldSongIdx = songIndex;
+    });
+
+    var venueList = document.getElementById('venue-list');
+    var venueTarget = document.getElementById('default-venue');
+    var oldVenueTarget = venueTarget;
+    venueList.addEventListener('click', (event) => {
+        venueTarget = event.target.closest('li');
+        if (venueTarget == undefined) {
+            return;
+        }
+        oldVenueTarget.style.background = "none";
+        venueTarget.style.backgroundColor = "#663399bb";
+        oldVenueTarget = venueTarget;
+        venueIndex = [...venueTarget.parentElement.children].indexOf(venueTarget);
+    });
+
+
     var menu = document.getElementById("main-menu");
+    var gameFeatures = document.getElementById("game-features");
 
     var playBtn = document.getElementById('play-btn');
     playBtn.addEventListener('click', () => {
         menu.style.display = "none";
+        gameFeatures.style.display = "block";
         notesData.getMusicJSON($, function (data) {
             notesPerLine = data;
+
+            audio = new Audio(helpers.getSong(songIndex));
+            audio.loop = false;
+            audio.addEventListener("ended", function () {
+                audio.currentTime = 0;
+                console.log("ended");
+                console.log(currNoteLine);
+            });
+
+            guitarMode = false;
+            init();
+        });
+    });
+
+    var guitarBtn = document.getElementById('song-btn');
+    guitarBtn.addEventListener('click', () => {
+        menu.style.display = "none";
+        gameFeatures.style.display = "block";
+        notesData.getMusicJSON($, function (data) {
+            notesPerLine = data;
+            guitarMode = true;
             init();
         });
     });
     //// remove during production
+    // menu.style.display = "none";
+    // gameFeatures.style.display = "block";
     // notesData.getMusicJSON($, function (data) {
     //     notesPerLine = data;
     //     init();
@@ -60749,7 +60818,7 @@ function init() {
 
     // Load background texture with image.
     var planeGeom = new THREE.PlaneGeometry(55, 55);
-    var imgSrc = "public/assets/images/concert.jpeg"
+    var imgSrc = helpers.getStage(venueIndex);
     var texture = new THREE.TextureLoader().load(imgSrc, (texture) => {
         texture.needsUpdate = true;
         mesh.scale.set(1.0, texture.image.height / texture.image.width, 1.0);
@@ -60909,8 +60978,7 @@ function initializeGrid() {
 
     originalMeshPositions = [];
     var colColors = [
-        0x00FF00, 0xFF0000, 0xFFFF00, 0x0000FF,
-        0xFF7F00, 0x9400D3, 0x4B0082
+        0x00FF00, 0xFF0000, 0xFFFF00, 0x0000FF, 0xFF7F00
     ]
 
     for (var i = 0; i < numMovingLines; i++) {
@@ -61035,6 +61103,10 @@ function initializeGrid() {
         iterable++;
     }
 
+    notesData.getActivePitchesJSON($, function (data) {
+        activePitches = data;
+    });
+
     currNoteLine = -1;
     ////////////////////////
     // set isdown to false initially
@@ -61055,6 +61127,9 @@ function initializeGrid() {
             countDownInterval = setInterval(countDown, 1000);
         } else {
             pauseTrack = true;
+            if (!guitarMode) {
+                audio.pause();
+            }
             pause.innerText = "Resume";
             clearInterval(countDownInterval);
             countdown.innerHTML = "";
@@ -61069,6 +61144,9 @@ function countDown() {
     if (countdownAmt == 0) {
         clearInterval(countDownInterval);
         countdown.innerHTML = "";
+        if (!guitarMode) {
+            audio.play();
+        }
         animate();
     } else {
         countdown.innerText = countdownAmt;
@@ -61109,7 +61187,9 @@ function onKeyDown() {
             }
             isDown[0] = true;
             resetIsDown[0] = true;
-            play.playTone(pitches.pitchD)
+            if (guitarMode) {
+                play.playTone(pitches.pitchD)
+            }
             break;
         case 83: // s
             if (numOfCols < 2) {
@@ -61121,7 +61201,9 @@ function onKeyDown() {
             }
             isDown[1] = true;
             resetIsDown[1] = true;
-            play.playTone(pitches.pitchE)
+            if (guitarMode) {
+                play.playTone(pitches.pitchE)
+            }
             break;
         case 68: // d
             if (numOfCols < 3) {
@@ -61133,7 +61215,9 @@ function onKeyDown() {
             }
             isDown[2] = true;
             resetIsDown[2] = true;
-            play.playTone(pitches.pitchF)
+            if (guitarMode) {
+                play.playTone(pitches.pitchF)
+            }
             break;
         case 70: // f
             if (numOfCols < 4) {
@@ -61145,7 +61229,9 @@ function onKeyDown() {
             }
             isDown[3] = true;
             resetIsDown[3] = true;
-            play.playTone(pitches.pitchG)
+            if (guitarMode) {
+                play.playTone(pitches.pitchG)
+            }
             break;
         case 71: // g
             if (numOfCols < 5) {
@@ -61157,7 +61243,9 @@ function onKeyDown() {
             }
             isDown[4] = true;
             resetIsDown[4] = true;
-            play.playTone(pitches.pitchA)
+            if (guitarMode) {
+                play.playTone(pitches.pitchA)
+            }
             break;
     }
     checkCollision();
@@ -61224,7 +61312,17 @@ function animate() {
     }
 }
 
+// var duration = audio.duration; // 229.877551
+
 function render() {
+
+    if (currNoteLine == 7 && !guitarMode) {
+        // console.timeEnd("t");
+        // console.log(audio.duration)
+        // console.log(activePitches.length)
+        audio.play();
+    }
+
     // Bases for mesh should be 100 and line is 10.
     // 10 : 100, 5 : 200, 2.5 : 400, and so on for mesh and line speed factors.
     // Change the grid speed by decimals if desired, faster is a smaller value and slower is larger.
@@ -61311,6 +61409,7 @@ function render() {
             });
             line.position.set(0, 0, 0);
             currNoteLine++;
+            // console.time("t");
             resetIsDown = new Array(numOfCols).fill(false);
             alreadyHit = false;
             notesInRow.innerText = count;
@@ -61340,7 +61439,7 @@ module.exports = {
                 value: 1.7,
                 factor: 6.5
             },
-            hard: {
+            hard: { // 861
                 value: 1,
                 factor: 9.5
             }
@@ -61395,6 +61494,20 @@ module.exports = {
     },
     getOriginalXScale: function() {
         return ogXScale;
+    },
+    getSong: function(idx) {
+        var songs = [
+            "/public/assets/audio/come-a-little-closer.mp3"
+        ];
+        return (idx ==0) ? songs[~~(songs.length * Math.random())] : songs[idx-1];
+    },
+    getStage: function(idx) {
+        var venues = [
+            "public/assets/images/concert.jpeg",
+            "public/assets/images/the-big-stage.jpg",
+            "public/assets/images/concert-red.jpeg"
+        ];
+        return (idx ==0) ? venues[~~(venues.length * Math.random())] : venues[idx-1];
     }
 }
 },{}],6:[function(require,module,exports){
@@ -61431,6 +61544,11 @@ module.exports = {
             }
 
             callback(notesPerLine);
+        });
+    },
+    getActivePitchesJSON: function ($, callback) {
+        $.getJSON("helpers/sheet-music/come-a-little-closer/active-pitches.json", function (data) {
+            callback(data);
         });
     }
 }

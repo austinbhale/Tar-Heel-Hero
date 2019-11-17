@@ -130,6 +130,8 @@ canvas {
 .game-features {
     display: none;
     position: absolute;
+    background-color: gray;
+    padding: 10px;
 }
 
 .song-ctr,
@@ -272,13 +274,13 @@ canvas {
     color: rgb(0, 0, 0, 0.8);
 }
 
-.venue-list li:nth-child(1) {
+#default-venue {
     background-color: #663399bb;
 }
 
 .venue-list li img {
     width: 150px;
-    max-height: 80px;
+    height: 80px;
 }
 
 hr {
@@ -326,4 +328,12 @@ hr {
         display: block;
         margin: 0.2em auto;
     }
+}
+
+#album-list li {
+    display: none;
+}
+
+#default-img {
+    display: block !important;
 }
