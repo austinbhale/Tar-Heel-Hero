@@ -26,7 +26,7 @@ var circles, originalColors;
 
 // Note frequency.
 var currNoteLine = 0; // going through the json
-var activePitches = [];
+var activePitches;
 var release;
 
 // Read JSON data.
@@ -42,6 +42,8 @@ var pause = document.getElementById('pause');
 var count = 0;
 var scoreCount = 0;
 var multiplierCount = 1;
+var totalNotes = 0;
+var hitNotes = 0;
 totalScore.innerText = 0;
 notesInRow.innerText = 0;
 multiplier.innerText = "1x";
@@ -151,6 +153,16 @@ function getMenuChoice() {
     // gameFeatures.style.display = "block";
     // notesData.getMusicJSON($, function (data) {
     //     notesPerLine = data;
+
+    //     audio = new Audio(helpers.getSong(songIndex));
+    //     audio.loop = false;
+    //     audio.addEventListener("ended", function () {
+    //         audio.currentTime = 0;
+    //         console.log("ended");
+    //         console.log(currNoteLine);
+    //     });
+
+    //     guitarMode = false;
     //     init();
     // });
     ////
@@ -408,14 +420,77 @@ function initializeGrid() {
         scene.add(circle);
     }
 
-    currNoteLine = 0;
+    activePitches = {
+        oneCol: getNotes(1),
+        twoCol: getNotes(2),
+        easy: getNotes(3),
+        medium: getNotes(4),
+        hard: getNotes(5)
+    };
+
+    activePitches = ((numOfCols) => {
+        switch (numOfCols) {
+            case 1:
+                return activePitches.oneCol;
+            case 2:
+                return activePitches.twoCol;
+            case 4:
+                return activePitches.medium;
+            case 5:
+                return activePitches.hard;
+            default:
+                return activePitches.easy;
+        }
+    })(numOfCols);
+
+    notesData.getActivePitchesJSON($, numOfCols, function (data) {
+        activePitches = data;
+    });
+
+    // console.log(JSON.stringify(activePitches));
+
+    currNoteLine = -1;
+    ////////////////////////
+    // set isdown to false initially
+    for (var i = 0; i < numOfCols; i++) {
+        isDown[i] = false;
+    }
+    resetIsDown = isDown;
+
+    document.body.addEventListener('keydown', onKeyDown, false);
+    document.body.addEventListener('keyup', onKeyUp, false);
+    renderer.setClearColor(0x000000, 0);
+    pause.addEventListener('click', () => {
+        if (pauseTrack) {
+            pauseTrack = false;
+            pause.innerText = "Pause";
+            countdownAmt = 3;
+            countdown.innerText = countdownAmt;
+            countDownInterval = setInterval(countDown, 1000);
+        } else {
+            pauseTrack = true;
+            if (!guitarMode) {
+                audio.pause();
+            }
+            pause.innerText = "Resume";
+            clearInterval(countDownInterval);
+            countdown.innerHTML = "";
+            animate()
+        }
+    });
+    animate();
+}
+
+function getNotes(cols) {
+    var activePitches = [];
+    var currNoteLine = 0;
     var iterable = 0;
     var duration_dist = 0;
     while (currNoteLine < notesPerLine.length) {
         activePitches[iterable] = [];
 
         const pitches = [];
-        for (var i = 0; i < numOfCols; i++) {
+        for (var i = 0; i < cols; i++) {
             pitches[i] = false;
         }
 
@@ -455,40 +530,7 @@ function initializeGrid() {
         iterable++;
     }
 
-    notesData.getActivePitchesJSON($, function (data) {
-        activePitches = data;
-    });
-
-    currNoteLine = -1;
-    ////////////////////////
-    // set isdown to false initially
-    for (var i = 0; i < numOfCols; i++) {
-        isDown[i] = false;
-    }
-    resetIsDown = isDown;
-
-    document.body.addEventListener('keydown', onKeyDown, false);
-    document.body.addEventListener('keyup', onKeyUp, false);
-    renderer.setClearColor(0x000000, 0);
-    pause.addEventListener('click', () => {
-        if (pauseTrack) {
-            pauseTrack = false;
-            pause.innerText = "Pause";
-            countdownAmt = 3;
-            countdown.innerText = countdownAmt;
-            countDownInterval = setInterval(countDown, 1000);
-        } else {
-            pauseTrack = true;
-            if (!guitarMode) {
-                audio.pause();
-            }
-            pause.innerText = "Resume";
-            clearInterval(countDownInterval);
-            countdown.innerHTML = "";
-            animate()
-        }
-    });
-    animate();
+    return activePitches;
 }
 
 function countDown() {
@@ -515,6 +557,8 @@ function checkCollision() {
         }
         alreadyHit = true;
         count++;
+        hitNotes++;
+        scoreCount += count * multiplierCount;
     } else if (multipleHits > 0) {
         multipleHits--;
     } else {
@@ -662,13 +706,16 @@ function animate() {
     } else {
         render();
     }
+
+    // var accuracy = Math.round((hitNotes / totalNotes) * 100);
+    // console.log(accuracy);
 }
 
 // var duration = audio.duration; // 229.877551
 
 function render() {
 
-    if (currNoteLine == 7 && !guitarMode) {
+    if (currNoteLine == movingLines.length - 1 && !guitarMode) {
         // console.timeEnd("t");
         // console.log(audio.duration)
         // console.log(activePitches.length)
@@ -679,7 +726,17 @@ function render() {
     // 10 : 100, 5 : 200, 2.5 : 400, and so on for mesh and line speed factors.
     // Change the grid speed by decimals if desired, faster is a smaller value and slower is larger.
     var speeds = game.speeds();
-    var speed = speeds.hard;
+    var speed = ((numOfCols) => {
+        switch (numOfCols) {
+            case 4:
+                return speeds.medium;
+            case 5:
+                return speeds.hard;
+            default:
+                return speeds.easy;
+        }
+    })(numOfCols);
+
     const meshSpeedFactor = 100 * speed.value;
     const lineSpeedFactor = 10 / speed.value;
 
@@ -707,6 +764,7 @@ function render() {
 
         //////RELEASE NOTES
         release = false;
+        var firstOne = true;
         for (var j = 0; j < notes[i].length; j++) {
             let mesh = notes[i][j];
 
@@ -718,6 +776,12 @@ function render() {
                 if (mesh.visible && !alreadyHit) {
                     count = 0;
                 }
+
+                if (mesh.visible && firstOne) {
+                    totalNotes++;
+                    firstOne = false;
+                }
+
                 mesh.traverse(function (mesh) {
                     mesh.visible = false;
                 });
@@ -766,7 +830,6 @@ function render() {
             alreadyHit = false;
             notesInRow.innerText = count;
             multiplierCount = (Math.floor((count / 10) + 1) > 4) ? 4 : Math.floor((count / 10) + 1);
-            scoreCount += count * multiplierCount;
             multiplier.innerText = (multiplierCount > 4) ? "4x" : multiplierCount + "x";
             totalScore.innerText = scoreCount;
         } else {

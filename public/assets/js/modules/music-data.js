@@ -1,7 +1,7 @@
 module.exports = {
     getMusicJSON: function ($, callback) {
         var notesPerLine;
-        $.getJSON("public/assets/sheet-data/come-a-little-closer.json", function (data) {
+        $.getJSON("helpers/sheet-music/come-a-little-closer/come-a-little-closer.json", function (data) {
             let musicDataQueue = [];
             const defaultXBound = 4.5;
 
@@ -33,8 +33,23 @@ module.exports = {
             callback(notesPerLine);
         });
     },
-    getActivePitchesJSON: function ($, callback) {
-        $.getJSON("helpers/sheet-music/come-a-little-closer/active-pitches.json", function (data) {
+    getActivePitchesJSON: function ($, numOfCols, callback) {
+        var mode = ((numOfCols) => {
+            switch (numOfCols) {
+                case 1:
+                    return "one-col";
+                case 2:
+                    return "two-col";
+                case 4:
+                    return "medium";
+                case 5:
+                    return "hard";
+                default:
+                    return "easy";
+            }
+        })(numOfCols);
+
+        $.getJSON(`helpers/sheet-music/come-a-little-closer/active-pitches/${mode}.json`, function (data) {
             callback(data);
         });
     }
