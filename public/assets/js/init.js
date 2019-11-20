@@ -25,7 +25,7 @@ var lineVecs, linePos;
 var circles, originalColors;
 
 // Note frequency.
-var currNoteLine = 0; // going through the json
+var currNoteLine = -1; // going through the json
 var activePitches;
 var release;
 
@@ -443,13 +443,8 @@ function initializeGrid() {
         }
     })(numOfCols);
 
-    notesData.getActivePitchesJSON($, numOfCols, function (data) {
-        activePitches = data;
-    });
+    activePitches = notesData.getSongData("come-a-little-closer", numOfCols);
 
-    // console.log(JSON.stringify(activePitches));
-
-    currNoteLine = -1;
     ////////////////////////
     // set isdown to false initially
     for (var i = 0; i < numOfCols; i++) {

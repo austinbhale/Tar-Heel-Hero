@@ -1,3 +1,5 @@
+var songs = require('./diff');
+
 module.exports = {
     getMusicJSON: function ($, callback) {
         var notesPerLine;
@@ -33,24 +35,21 @@ module.exports = {
             callback(notesPerLine);
         });
     },
-    getActivePitchesJSON: function ($, numOfCols, callback) {
-        var mode = ((numOfCols) => {
-            switch (numOfCols) {
-                case 1:
-                    return "one-col";
-                case 2:
-                    return "two-col";
-                case 4:
-                    return "medium";
-                case 5:
-                    return "hard";
-                default:
-                    return "easy";
-            }
-        })(numOfCols);
-
-        $.getJSON(`helpers/sheet-music/come-a-little-closer/active-pitches/${mode}.json`, function (data) {
-            callback(data);
-        });
+    getSongData: function (songName, numOfCols) {
+        switch (songName) {
+            case "come-a-little-closer":
+                switch (numOfCols) {
+                    case 1:
+                        return songs.comeALittleCloser().oneCol;
+                    case 2:
+                        return songs.comeALittleCloser().twoCol;
+                    case 4:
+                        return songs.comeALittleCloser().medium;
+                    case 5:
+                        return songs.comeALittleCloser().hard;
+                    default:
+                        return songs.comeALittleCloser().easy;
+                }
+        }
     }
 }
