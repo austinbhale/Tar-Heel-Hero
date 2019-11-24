@@ -130,24 +130,78 @@
                             <img src="./public/assets/images/concert-red.jpeg" alt="West Coast">
                             West Coast
                         </li>
+                        <li>
+                            <img src="./public/assets/images/candy-stage.jpg" alt="West Coast">
+                            Candy Stage
+                        </li>
+                        <li>
+                            <img src="./public/assets/images/fourth-july.jpg" alt="West Coast">
+                            Fourth of July
+                        </li>
+                        <li>
+                            <img src="./public/assets/images/local-concert.jpg" alt="West Coast">
+                            Rainy Day
+                        </li>
+                        <li>
+                            <img src="./public/assets/images/northwest.jpg" alt="West Coast">
+                            PNW Stage
+                        </li>
+                        <li>
+                            <img src="./public/assets/images/red-rocks.jpg" alt="West Coast">
+                            Red Rocks
+                        </li>
+                        <li>
+                            <img src="./public/assets/images/retro.jpg" alt="West Coast">
+                            Retro Stage
+                        </li>
                     </ul>
                 </div>
             </div>
-            <!-- <div>
-                <p>Midi enabled?</p>
-            </div> -->
             <div class="buttons">
                 <a id="play-btn" class="enter">Play Song Mode</a>
                 <a id="song-btn" class="enter">Play Guitar Mode</a>
             </div>
         </div>
     </div>
-    <div class="game-features" id="game-features">
-        <p>Total score: <span id="score"></span></p>
-        <p>Notes in a row: <span id="notes-in-row"></span></p>
-        <p>Mulitplier: <span id="multiplier"></span></p>
+    <div class="features" id="features">
+        <div class="game-features">
+            <p id="score-ctr"><span id="score"></span></p>
+            <hr>
+            <p>Notes in a row: <span id="notes-in-row"></span></p>
+        </div>
         <button id="pause">Pause</button>
-        <p id="countdown"></p>
+        <button id="quit">Quit</button>
+        <h1 id="countdown"></h1>
+        <div class="whole">
+            <div class="ctr">
+                <div class="ctr1">
+                    <div class="filler" id="filler"></div>
+                </div>
+            </div>
+            <div class="nums">
+                <p id="fourx">4x</p>
+                <p id="threex">3x</p>
+                <p id="twox">2x</p>
+                <p id="onex">1x</p>
+            </div>
+        </div>
+    </div>
+    <div class="ending-screen-ctr" id="end-screen">
+        <div class="ending-screen">
+            <h1>You Rock!</h1>
+            <p class="star" id="star">
+            </p>
+            <h3>Final Score</h3>
+            <hr>
+            <h2 id="final-score"></h2>
+            <h3>Accuracy</h3>
+            <hr>
+            <h2 id="accuracy"></h2>
+            <h3>Highest Notes in a Row</h3>
+            <hr>
+            <h2 id="highest-notes"></h2>
+            <button id="return">Main Menu</button>
+        </div>
     </div>
 </body>
 <script src='https://surikov.github.io/webaudiofont/npm/dist/WebAudioFontPlayer.js'></script>

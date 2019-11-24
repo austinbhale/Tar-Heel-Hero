@@ -35,18 +35,25 @@ var notesPerLine;
 // Score features.
 var totalScore = document.getElementById('score');
 var notesInRow = document.getElementById('notes-in-row');
-var multiplier = document.getElementById('multiplier');
 var countdown = document.getElementById('countdown');
 var pauseTrack = false;
 var pause = document.getElementById('pause');
+var quit = document.getElementById('quit');
+var meter = document.getElementById('filler');
+var onex = document.getElementById('onex');
+var twox = document.getElementById('twox');
+var threex = document.getElementById('threex');
+var fourx = document.getElementById('fourx');
+var endScreen = document.getElementById('end-screen');
+var id;
 var count = 0;
 var scoreCount = 0;
 var multiplierCount = 1;
 var totalNotes = 0;
 var hitNotes = 0;
+var highestCount = 0;
 totalScore.innerText = 0;
 notesInRow.innerText = 0;
-multiplier.innerText = "1x";
 
 var countdownAmt, countDownInterval;
 var audio;
@@ -116,7 +123,7 @@ function getMenuChoice() {
 
 
     var menu = document.getElementById("main-menu");
-    var gameFeatures = document.getElementById("game-features");
+    var gameFeatures = document.getElementById("features");
 
     var playBtn = document.getElementById('play-btn');
     playBtn.addEventListener('click', () => {
@@ -127,10 +134,9 @@ function getMenuChoice() {
 
             audio = new Audio(helpers.getSong(songIndex));
             audio.loop = false;
-            audio.addEventListener("ended", function () {
-                audio.currentTime = 0;
-                console.log("ended");
-                console.log(currNoteLine);
+            audio.currentTime = 0;
+            audio.addEventListener("ended", () => {
+                getEndingScreen();
             });
 
             guitarMode = false;
@@ -144,28 +150,19 @@ function getMenuChoice() {
         gameFeatures.style.display = "block";
         notesData.getMusicJSON($, function (data) {
             notesPerLine = data;
+
+            audio = new Audio(helpers.getSong(songIndex));
+            audio.loop = false;
+            audio.volume = 0;
+            audio.currentTime = 0;
+            audio.addEventListener("ended", () => {
+                getEndingScreen();
+            });
+
             guitarMode = true;
             init();
         });
     });
-    //// remove during production
-    // menu.style.display = "none";
-    // gameFeatures.style.display = "block";
-    // notesData.getMusicJSON($, function (data) {
-    //     notesPerLine = data;
-
-    //     audio = new Audio(helpers.getSong(songIndex));
-    //     audio.loop = false;
-    //     audio.addEventListener("ended", function () {
-    //         audio.currentTime = 0;
-    //         console.log("ended");
-    //         console.log(currNoteLine);
-    //     });
-
-    //     guitarMode = false;
-    //     init();
-    // });
-    ////
 }
 
 function init() {
@@ -462,16 +459,21 @@ function initializeGrid() {
             countdownAmt = 3;
             countdown.innerText = countdownAmt;
             countDownInterval = setInterval(countDown, 1000);
+            quit.style.display = "none";
         } else {
             pauseTrack = true;
             if (!guitarMode) {
                 audio.pause();
             }
             pause.innerText = "Resume";
+            quit.style.display = "block";
             clearInterval(countDownInterval);
             countdown.innerHTML = "";
             animate()
         }
+    });
+    quit.addEventListener('click', () => {
+        window.location.reload();
     });
     animate();
 }
@@ -552,6 +554,9 @@ function checkCollision() {
         }
         alreadyHit = true;
         count++;
+        if (count >= highestCount) {
+            highestCount = count;
+        }
         hitNotes++;
         scoreCount += count * multiplierCount;
     } else if (multipleHits > 0) {
@@ -564,6 +569,8 @@ function checkCollision() {
 
 function onKeyDown() {
     switch (event.keyCode) {
+        case 32:
+            console.log(currNoteLine);
         case 40: // up
             camera.translateZ(0.1);
             break;
@@ -695,15 +702,8 @@ function lightButton(buttonIdx, keydown) {
 function animate() {
     // creates a loop to redraw the renderer
     // every time the screen refreshes
-    var id = requestAnimationFrame(animate);
-    if (currNoteLine >= activePitches.length + movingLines.length || pauseTrack) {
-        cancelAnimationFrame(id);
-    } else {
-        render();
-    }
-
-    // var accuracy = Math.round((hitNotes / totalNotes) * 100);
-    // console.log(accuracy);
+    id = requestAnimationFrame(animate);
+    (pauseTrack) ? cancelAnimationFrame(id): render();
 }
 
 // var duration = audio.duration; // 229.877551
@@ -820,12 +820,12 @@ function render() {
             });
             line.position.set(0, 0, 0);
             currNoteLine++;
-            // console.time("t");
             resetIsDown = new Array(numOfCols).fill(false);
             alreadyHit = false;
             notesInRow.innerText = count;
             multiplierCount = (Math.floor((count / 10) + 1) > 4) ? 4 : Math.floor((count / 10) + 1);
-            multiplier.innerText = (multiplierCount > 4) ? "4x" : multiplierCount + "x";
+            meter.style.height = (meter.style.height != "0%") ? (100 - (count * 3.33)) + "%" : "100%";
+            setMeter();
             totalScore.innerText = scoreCount;
         } else {
             line.scale.x = helpers.getOriginalXScale();
@@ -836,4 +836,66 @@ function render() {
     }
 
     renderer.render(scene, camera);
+}
+
+function setMeter() {
+    if (multiplierCount > 3) {
+        threex.style.backgroundSize = "0%";
+        fourx.style.backgroundSize = "100%";
+    } else if (multiplierCount > 2) {
+        twox.style.backgroundSize = "0%";
+        threex.style.backgroundSize = "100%";
+    } else if (multiplierCount > 1) {
+        onex.style.backgroundSize = "0%";
+        twox.style.backgroundSize = "100%";
+    } else {
+        onex.style.backgroundSize = "100%";
+        twox.style.backgroundSize = "0%";
+        threex.style.backgroundSize = "0%";
+        fourx.style.backgroundSize = "0%";
+    }
+}
+
+function getEndingScreen() {
+    endScreen.style.display = "block";
+    cancelAnimationFrame(id);
+
+    var scoreDisplay = document.getElementById("final-score");
+    scoreDisplay.innerHTML = scoreCount;
+
+    var accuracy = Math.round((hitNotes / totalNotes) * 100);
+    console.log(accuracy);
+
+    var accuracyDisplay = document.getElementById("accuracy");
+    accuracyDisplay.innerHTML = accuracy + "%";
+
+    var highestNoteDisplay = document.getElementById("highest-notes");
+    highestNoteDisplay.innerHTML = highestCount;
+
+    console.log("ended");
+    console.log(currNoteLine);
+
+    var stars = document.getElementById("star");
+    if (accuracy > 90) {
+        stars.innerHTML = "&#9733;&#9733;&#9733;&#9733;&#9733;";
+    } else if (accuracy > 75) {
+        stars.innerHTML = "&#9733;&#9733;&#9733;&#9733;";
+    } else if (accuracy > 50) {
+        stars.innerHTML = "&#9733;&#9733;&#9733;";
+    } else if (accuracy > 25) {
+        stars.innerHTML = "&#9733;&#9733;";
+    } else {
+        stars.innerHTML = "&#9733;";
+    }
+    
+    // Save data to sessionStorage
+    // sessionStorage.setItem('key', 'value');
+
+    // Get saved data from sessionStorage
+    // let data = sessionStorage.getItem('key');
+
+    var mainMenu = document.getElementById("return");
+    mainMenu.addEventListener("click", () => {
+        window.location.reload();
+    });
 }

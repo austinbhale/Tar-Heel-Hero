@@ -29,24 +29,30 @@ module.exports = {
             (Math.max(((hex & 0xff00) >> 8) - changeBy, floor) << 8) +
             Math.max(((hex & 0xff) - changeBy), floor);
     },
-    setOriginalXScale: function(value) {
+    setOriginalXScale: function (value) {
         ogXScale = value;
     },
-    getOriginalXScale: function() {
+    getOriginalXScale: function () {
         return ogXScale;
     },
-    getSong: function(idx) {
+    getSong: function (idx) {
         var songs = [
             "/public/assets/audio/come-a-little-closer.mp3"
         ];
-        return (idx ==0) ? songs[~~(songs.length * Math.random())] : songs[idx-1];
+        return (idx == 0) ? songs[~~(songs.length * Math.random())] : songs[idx - 1];
     },
-    getStage: function(idx) {
+    getStage: function (idx) {
         var venues = [
             "public/assets/images/concert.jpeg",
             "public/assets/images/the-big-stage.jpg",
-            "public/assets/images/concert-red.jpeg"
+            "public/assets/images/concert-red.jpeg",
+            "public/assets/images/candy-stage.jpg",
+            "public/assets/images/fourth-july.jpg",
+            "public/assets/images/local-concert.jpg",
+            "public/assets/images/northwest.jpg",
+            "public/assets/images/red-rocks.jpg",
+            "public/assets/images/retro.jpg",
         ];
-        return (idx ==0) ? venues[~~(venues.length * Math.random())] : venues[idx-1];
+        return (idx == 0) ? venues[~~(venues.length * Math.random())] : venues[idx - 1];
     }
 }

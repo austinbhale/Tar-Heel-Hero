@@ -1,4 +1,4 @@
-var songs = require('./diff');
+var songs = require('./songs');
 
 module.exports = {
     getMusicJSON: function ($, callback) {
