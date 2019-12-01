@@ -38,7 +38,7 @@ canvas {
     z-index: 1;
     background: url('../images/concert.jpeg');
     background-repeat: no-repeat;
-    background-size: auto;
+    background-size: 100% 100%;
     color: #99badd;
 }
 
@@ -104,6 +104,10 @@ canvas {
 
 .difficulty-list li img {
     visibility: hidden;
+}
+
+#default-diff {
+    color: #9564c5;
 }
 
 #default-diff img {

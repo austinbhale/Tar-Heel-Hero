@@ -9,7 +9,7 @@ module.exports = {
                 value: 1.7,
                 factor: 6.5
             },
-            hard: { // 861
+            hard: {
                 value: 1,
                 factor: 9.5
             }

@@ -1,4 +1,7 @@
 var songs = require('./songs');
+var songNames = [
+    "come-a-little-closer"
+];
 
 module.exports = {
     getMusicJSON: function ($, callback) {
@@ -35,8 +38,8 @@ module.exports = {
             callback(notesPerLine);
         });
     },
-    getSongData: function (songName, numOfCols) {
-        switch (songName) {
+    getSongData: function (songIndex, numOfCols) {
+        switch (songNames[songIndex]) {
             case "come-a-little-closer":
                 switch (numOfCols) {
                     case 1:
@@ -51,5 +54,16 @@ module.exports = {
                         return songs.comeALittleCloser().easy;
                 }
         }
+    },
+    getSong: function (songIndex, setSongIndex) {
+        var name = "";
+        // Random song when zero.
+        if (songIndex == 0) {
+            songIndex = ~~(songNames.length * Math.random());
+            name = songNames[songIndex];
+         } else {
+            name = songNames[songIndex-1];
+         }
+         setSongIndex("/public/assets/audio/" + name + ".mp3", songIndex);
     }
 }

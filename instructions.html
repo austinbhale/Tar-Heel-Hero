@@ -13,22 +13,93 @@
     <!-- remove for production -->
     <link rel="icon" href="data:;base64,iVBORw0KGgo=">
 </head>
+
 <body>
     <div id="main-menu" class="main-menu">
         <ul class="serv">
             <li class="github"><a href="https://github.com/austinbhale/Tar-Heel-Hero"><img
                         src="./public/assets/images/GitHub-Mark-64px.png" alt="Github"></a></li>
             <li class="title">
-                <a href="/"><h1>TaR HeeL HeRO</h1></a>
+                <a href="/">
+                    <h1>TaR HeeL HeRO</h1>
+                </a>
             </li>
-            <li class="instructionsBtn" id="instructions"><a href="/"><h2>MaiN MeNu</h2></a></li>
+            <li class="instructionsBtn" id="instructions"><a href="/">
+                    <h2>MaiN MeNu</h2>
+                </a></li>
         </ul>
         <div class="content-ctr">
             <h3>Instructions</h3>
             <hr>
-            <p>coming soon...</p>
+            <table class="table">
+                <tr>
+                    <th>Difficulty</th>
+                    <th>Speed</th>
+                    <th>Keys</th>
+                </tr>
+                <tr>
+                    <td>1-column</td>
+                    <td>Slowest</td>
+                    <td class="keys">
+                        <span>a</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2-column</td>
+                    <td>Slowest</td>
+                    <td class="keys">
+                        <span>a</span>
+                        <span>s</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Easy</td>
+                    <td>Slowest</td>
+                    <td class="keys">
+                        <span>a</span>
+                        <span>s</span>
+                        <span>d</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Medium</td>
+                    <td>Medium</td>
+                    <td class="keys">
+                        <span>a</span>
+                        <span>s</span>
+                        <span>d</span>
+                        <span>f</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Hard</td>
+                    <td>Fastest</td>
+                    <td class="keys">
+                        <span>a</span>
+                        <span>s</span>
+                        <span>d</span>
+                        <span>f</span>
+                        <span>g</span>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <p class="note">The difference in difficulty changes the frequency of note generation
+                and amount of columns.
+            </p>
+            <br>
+            <table class="table">
+                <tr>
+                    <th>Song Mode</th>
+                    <th>Guitar Mode</th>
+                </tr>
+                <tr>
+                    <td>Play to your choice of song!</td>
+                    <td>Play your own guitar notes!</td>
+                </tr>
+            </table>
         </div>
-
     </div>
 </body>
+
 </html>

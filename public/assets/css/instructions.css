@@ -1,3 +1,55 @@
 .main-menu {
     background: url('../images/concert-red.jpeg');
+    background-size: 100% 100%;
+}
+
+.table {
+    width: 100%;
+    text-align: center;
+}
+
+th {
+    color: #9564c5;
+}
+
+td {
+    padding: 5px 0px;
+}
+
+.keys span {
+    padding: 3px;
+    margin-right: 6px;
+    border-radius: 100%;
+}
+
+.keys span:nth-child(1) {
+    color: #00FF00;
+    border: solid 1px #00FF00;
+}
+
+.keys span:nth-child(2) {
+    color: #FF0000;
+    border: solid 1px #FF0000;
+}
+
+.keys span:nth-child(3) {
+    color: #FFFF00;
+    border: solid 1px #FFFF00;
+}
+
+.keys span:nth-child(4) {
+    color: #0000FF;
+    border: solid 1px #0000FF;
+}
+
+.keys span:nth-child(5) {
+    color: #FF7F00;
+    border: solid 1px #FF7F00;
+}
+
+.note {
+    text-align: center;
+    border: solid 2px rgba(128, 128, 128, 0.7);
+    border-radius: 0.2em;
+    padding: 7px;
 }

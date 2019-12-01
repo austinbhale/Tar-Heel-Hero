@@ -82,6 +82,8 @@ function getMenuChoice() {
         }
         oldTarget.children[0].style.visibility = "hidden";
         target.children[0].style.visibility = "visible";
+        oldTarget.style.color = "#99badd";
+        target.style.color = "#9564c5";
         oldTarget = target;
         const index = [...target.parentElement.children].indexOf(target)
         numOfCols = index + 1;
@@ -132,15 +134,18 @@ function getMenuChoice() {
         notesData.getMusicJSON($, function (data) {
             notesPerLine = data;
 
-            audio = new Audio(helpers.getSong(songIndex));
-            audio.loop = false;
-            audio.currentTime = 0;
-            audio.addEventListener("ended", () => {
-                getEndingScreen();
-            });
+            notesData.getSong(songIndex, function (fileName, newSongIndex) {
+                songIndex = newSongIndex;
+                audio = new Audio(fileName);
+                audio.loop = false;
+                audio.currentTime = 0;
+                audio.addEventListener("ended", () => {
+                    getEndingScreen();
+                });
 
-            guitarMode = false;
-            init();
+                guitarMode = false;
+                init();
+            });
         });
     });
 
@@ -151,16 +156,18 @@ function getMenuChoice() {
         notesData.getMusicJSON($, function (data) {
             notesPerLine = data;
 
-            audio = new Audio(helpers.getSong(songIndex));
-            audio.loop = false;
-            audio.volume = 0;
-            audio.currentTime = 0;
-            audio.addEventListener("ended", () => {
-                getEndingScreen();
-            });
+            notesData.getSong(songIndex, function (fileName, newSongIndex) {
+                songIndex = newSongIndex;
+                audio = new Audio(fileName);
+                audio.loop = false;
+                audio.currentTime = 0;
+                audio.addEventListener("ended", () => {
+                    getEndingScreen();
+                });
 
-            guitarMode = true;
-            init();
+                guitarMode = true;
+                init();
+            });
         });
     });
 }
@@ -440,7 +447,7 @@ function initializeGrid() {
         }
     })(numOfCols);
 
-    activePitches = notesData.getSongData("come-a-little-closer", numOfCols);
+    activePitches = notesData.getSongData(songIndex, numOfCols);
 
     ////////////////////////
     // set isdown to false initially
@@ -887,7 +894,7 @@ function getEndingScreen() {
     } else {
         stars.innerHTML = "&#9733;";
     }
-    
+
     // Save data to sessionStorage
     // sessionStorage.setItem('key', 'value');
 
