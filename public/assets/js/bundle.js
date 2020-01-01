@@ -61679,6 +61679,11 @@ module.exports = {
         });
     },
     getSongData: function (songIndex, numOfCols) {
+        if (songIndex == 0) {
+            songIndex = Math.floor(Math.random() * songNames.length);
+        } else {
+            songIndex--;
+        }
         switch (songNames[songIndex]) {
             case "come-a-little-closer":
                 switch (numOfCols) {
