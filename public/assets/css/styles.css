@@ -406,6 +406,22 @@ hr {
     border-color: #FF7F00;
 }
 
+#song-stats p {
+    text-align: left;
+    margin: 0 4px;
+}
+
+.stats-hr {
+    margin: 5px 0 10px 0;
+}
+
+.stars {
+    color: gold;
+    font-size: 1.8em;
+    text-shadow: 1px black;
+    text-align: center !important;
+}
+
 @media all and (max-width:30em) {
     .enter {
         display: block;

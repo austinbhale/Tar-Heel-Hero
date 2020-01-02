@@ -2,11 +2,14 @@ var songs = require('./songs');
 var songNames = [
     "come-a-little-closer"
 ];
+var songIndex;
 
 module.exports = {
-    getMusicJSON: function ($, callback) {
+    getMusicJSON: function ($, songIndex, callback) {
+        songIndex = (songIndex == 0) ? Math.floor(Math.random() * songNames.length) : songIndex - 1;
+        console.log(songIndex);
         var notesPerLine;
-        $.getJSON("helpers/sheet-music/come-a-little-closer/come-a-little-closer.json", function (data) {
+        $.getJSON(`helpers/sheet-music/${songNames[songIndex]}/${songNames[songIndex]}.json`, function (data) {
             let musicDataQueue = [];
             const defaultXBound = 4.5;
 
@@ -35,15 +38,10 @@ module.exports = {
                 notesPerLine[lineCount].push(data[i]);
             }
 
-            callback(notesPerLine);
+            callback(songIndex, notesPerLine);
         });
     },
     getSongData: function (songIndex, numOfCols) {
-        if (songIndex == 0) {
-            songIndex = Math.floor(Math.random() * songNames.length);
-        } else {
-            songIndex--;
-        }
         switch (songNames[songIndex]) {
             case "come-a-little-closer":
                 switch (numOfCols) {
@@ -60,15 +58,7 @@ module.exports = {
                 }
         }
     },
-    getSong: function (songIndex, setSongIndex) {
-        var name = "";
-        // Random song when zero.
-        if (songIndex == 0) {
-            songIndex = ~~(songNames.length * Math.random());
-            name = songNames[songIndex];
-         } else {
-            name = songNames[songIndex-1];
-         }
-         setSongIndex("/public/assets/audio/" + name + ".mp3", songIndex);
+    getSong: function (songIndex, setAudio) {
+        setAudio(`/public/assets/audio/${songNames[songIndex]}.mp3`);
     }
 }

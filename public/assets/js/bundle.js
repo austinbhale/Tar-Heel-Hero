@@ -60755,6 +60755,20 @@ function getMenuChoice() {
         imgs.children[oldSongIdx].id = "";
         imgs.children[songIndex].id = "default-img";
         oldSongIdx = songIndex;
+
+
+        var stats = document.getElementById("song-stats");
+        var statsText = "";
+        if (localStorage.getItem(`song${songIndex}`) === null) {
+            statsText += "<p>Play now for stats!</p>";
+        } else {
+            var getStats = JSON.parse(localStorage.getItem(`song${songIndex}`));
+            statsText += `<p class="stars">${getStats.stars}</p>`;
+            statsText += `<p>Score: ${getStats.score}</p>`;
+            statsText += `<p>Accuracy: ${getStats.accuracy}%</p>`;
+            statsText += `<p>Notes in a row: ${getStats.notes}</p>`;
+        }
+        stats.innerHTML = statsText;
     });
 
     var venueList = document.getElementById('venue-list');
@@ -60779,11 +60793,10 @@ function getMenuChoice() {
     playBtn.addEventListener('click', () => {
         menu.style.display = "none";
         gameFeatures.style.display = "block";
-        notesData.getMusicJSON($, function (data) {
+        notesData.getMusicJSON($, songIndex, (songIndexOrder, data) => {
             notesPerLine = data;
-
-            notesData.getSong(songIndex, function (fileName, newSongIndex) {
-                songIndex = newSongIndex;
+            songIndex = songIndexOrder;
+            notesData.getSong(songIndex, (fileName) => {
                 audio = new Audio(fileName);
                 audio.loop = false;
                 audio.currentTime = 0;
@@ -60792,6 +60805,7 @@ function getMenuChoice() {
                 });
 
                 guitarMode = false;
+                setPitches(songIndex);
                 init();
             });
         });
@@ -60801,11 +60815,10 @@ function getMenuChoice() {
     guitarBtn.addEventListener('click', () => {
         menu.style.display = "none";
         gameFeatures.style.display = "block";
-        notesData.getMusicJSON($, function (data) {
+        notesData.getMusicJSON($, songIndex, function (songIndexOrder, data) {
             notesPerLine = data;
-
-            notesData.getSong(songIndex, function (fileName, newSongIndex) {
-                songIndex = newSongIndex;
+            songIndex = songIndexOrder;
+            notesData.getSong(songIndex, function (fileName) {
                 audio = new Audio(fileName);
                 audio.loop = false;
                 audio.currentTime = 0;
@@ -60814,10 +60827,16 @@ function getMenuChoice() {
                 });
 
                 guitarMode = true;
+                setPitches(songIndex);
                 init();
             });
         });
     });
+}
+
+function setPitches(newSongIndex) {
+    activePitches = notesData.getSongData(newSongIndex, numOfCols);
+    songIndex = newSongIndex;
 }
 
 function init() {
@@ -61072,30 +61091,29 @@ function initializeGrid() {
         scene.add(circle);
     }
 
-    activePitches = {
-        oneCol: getNotes(1),
-        twoCol: getNotes(2),
-        easy: getNotes(3),
-        medium: getNotes(4),
-        hard: getNotes(5)
-    };
+    // Note generation technique.
+    // activePitches = {
+    //     oneCol: getNotes(1),
+    //     twoCol: getNotes(2),
+    //     easy: getNotes(3),
+    //     medium: getNotes(4),
+    //     hard: getNotes(5)
+    // };
 
-    activePitches = ((numOfCols) => {
-        switch (numOfCols) {
-            case 1:
-                return activePitches.oneCol;
-            case 2:
-                return activePitches.twoCol;
-            case 4:
-                return activePitches.medium;
-            case 5:
-                return activePitches.hard;
-            default:
-                return activePitches.easy;
-        }
-    })(numOfCols);
-
-    activePitches = notesData.getSongData(songIndex, numOfCols);
+    // activePitches = ((numOfCols) => {
+    //     switch (numOfCols) {
+    //         case 1:
+    //             return activePitches.oneCol;
+    //         case 2:
+    //             return activePitches.twoCol;
+    //         case 4:
+    //             return activePitches.medium;
+    //         case 5:
+    //             return activePitches.hard;
+    //         default:
+    //             return activePitches.easy;
+    //     }
+    // })(numOfCols);
 
     ////////////////////////
     // set isdown to false initially
@@ -61531,23 +61549,38 @@ function getEndingScreen() {
     console.log(currNoteLine);
 
     var stars = document.getElementById("star");
+    var starsText = "";
     if (accuracy > 90) {
-        stars.innerHTML = "&#9733;&#9733;&#9733;&#9733;&#9733;";
+        starsText = "&#9733;&#9733;&#9733;&#9733;&#9733;";
     } else if (accuracy > 75) {
-        stars.innerHTML = "&#9733;&#9733;&#9733;&#9733;";
+        starsText = "&#9733;&#9733;&#9733;&#9733;";
     } else if (accuracy > 50) {
-        stars.innerHTML = "&#9733;&#9733;&#9733;";
+        starsText = "&#9733;&#9733;&#9733;";
     } else if (accuracy > 25) {
-        stars.innerHTML = "&#9733;&#9733;";
+        starsText = "&#9733;&#9733;";
     } else {
-        stars.innerHTML = "&#9733;";
+        starsText = "&#9733;";
     }
+    stars.innerHTML = starsText;
 
-    // Save data to sessionStorage
-    // sessionStorage.setItem('key', 'value');
+    var statsObj = {
+        score: scoreCount,
+        accuracy: accuracy,
+        stars: starsText,
+        notes: highestCount
+    };
 
-    // Get saved data from sessionStorage
-    // let data = sessionStorage.getItem('key');
+    if (localStorage.getItem(`song${songIndex}`) === null) {
+        localStorage.setItem(`song${songIndex}`, JSON.stringify(statsObj));
+    } else {
+        var getStats = JSON.parse(localStorage.getItem(`song${songIndex}`));
+        var newStats = {};
+        newStats.score = (scoreCount > getStats.score) ? scoreCount : getStats.score;
+        newStats.accuracy = (accuracy > getStats.accuracy) ? accuracy : getStats.accuracy;
+        newStats.stars = (starsText.length > getStats.stars.length) ? starsText : getStats.stars;
+        newStats.notes = (highestCount > getStats.notes) ? highestCount : getStats.notes;
+        localStorage.setItem(`song${songIndex}`, JSON.stringify(newStats));
+    }
 
     var mainMenu = document.getElementById("return");
     mainMenu.addEventListener("click", () => {
@@ -61642,11 +61675,14 @@ var songs = require('./songs');
 var songNames = [
     "come-a-little-closer"
 ];
+var songIndex;
 
 module.exports = {
-    getMusicJSON: function ($, callback) {
+    getMusicJSON: function ($, songIndex, callback) {
+        songIndex = (songIndex == 0) ? Math.floor(Math.random() * songNames.length) : songIndex - 1;
+        console.log(songIndex);
         var notesPerLine;
-        $.getJSON("helpers/sheet-music/come-a-little-closer/come-a-little-closer.json", function (data) {
+        $.getJSON(`helpers/sheet-music/${songNames[songIndex]}/${songNames[songIndex]}.json`, function (data) {
             let musicDataQueue = [];
             const defaultXBound = 4.5;
 
@@ -61675,15 +61711,10 @@ module.exports = {
                 notesPerLine[lineCount].push(data[i]);
             }
 
-            callback(notesPerLine);
+            callback(songIndex, notesPerLine);
         });
     },
     getSongData: function (songIndex, numOfCols) {
-        if (songIndex == 0) {
-            songIndex = Math.floor(Math.random() * songNames.length);
-        } else {
-            songIndex--;
-        }
         switch (songNames[songIndex]) {
             case "come-a-little-closer":
                 switch (numOfCols) {
@@ -61700,16 +61731,8 @@ module.exports = {
                 }
         }
     },
-    getSong: function (songIndex, setSongIndex) {
-        var name = "";
-        // Random song when zero.
-        if (songIndex == 0) {
-            songIndex = ~~(songNames.length * Math.random());
-            name = songNames[songIndex];
-         } else {
-            name = songNames[songIndex-1];
-         }
-         setSongIndex("/public/assets/audio/" + name + ".mp3", songIndex);
+    getSong: function (songIndex, setAudio) {
+        setAudio(`/public/assets/audio/${songNames[songIndex]}.mp3`);
     }
 }
 },{"./songs":8}],7:[function(require,module,exports){
