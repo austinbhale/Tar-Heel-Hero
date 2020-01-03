@@ -7,7 +7,7 @@ var songIndex;
 module.exports = {
     getMusicJSON: function ($, songIndex, callback) {
         songIndex = (songIndex == 0) ? Math.floor(Math.random() * songNames.length) : songIndex - 1;
-        console.log(songIndex);
+
         var notesPerLine;
         $.getJSON(`helpers/sheet-music/${songNames[songIndex]}/${songNames[songIndex]}.json`, function (data) {
             let musicDataQueue = [];

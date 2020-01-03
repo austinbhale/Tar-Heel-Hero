@@ -22,7 +22,7 @@ var notes, notesMovement
 var numOfCols = 3;
 var originalMeshPositions;
 var lineVecs, linePos;
-var circles, originalColors;
+var colColors, rings, circles, originalColors;
 
 // Note frequency.
 var currNoteLine = -1; // going through the json
@@ -61,6 +61,10 @@ var audio;
 var guitarMode;
 var venueIndex = 0;
 var songIndex = 0;
+
+var raycaster = new THREE.Raycaster();
+var mouse = new THREE.Vector2();
+var intersects;
 
 getMenuChoice();
 
@@ -147,8 +151,7 @@ function getMenuChoice() {
         gameFeatures.style.display = "block";
         notesData.getMusicJSON($, songIndex, (songIndexOrder, data) => {
             notesPerLine = data;
-            songIndex = songIndexOrder;
-            notesData.getSong(songIndex, (fileName) => {
+            notesData.getSong(songIndexOrder, (fileName) => {
                 audio = new Audio(fileName);
                 audio.loop = false;
                 audio.currentTime = 0;
@@ -157,7 +160,7 @@ function getMenuChoice() {
                 });
 
                 guitarMode = false;
-                setPitches(songIndex);
+                setPitches(songIndexOrder);
                 init();
             });
         });
@@ -169,8 +172,7 @@ function getMenuChoice() {
         gameFeatures.style.display = "block";
         notesData.getMusicJSON($, songIndex, function (songIndexOrder, data) {
             notesPerLine = data;
-            songIndex = songIndexOrder;
-            notesData.getSong(songIndex, function (fileName) {
+            notesData.getSong(songIndexOrder, function (fileName) {
                 audio = new Audio(fileName);
                 audio.loop = false;
                 audio.currentTime = 0;
@@ -179,7 +181,7 @@ function getMenuChoice() {
                 });
 
                 guitarMode = true;
-                setPitches(songIndex);
+                setPitches(songIndexOrder);
                 init();
             });
         });
@@ -188,7 +190,7 @@ function getMenuChoice() {
 
 function setPitches(newSongIndex) {
     activePitches = notesData.getSongData(newSongIndex, numOfCols);
-    songIndex = newSongIndex;
+    songIndex = newSongIndex + 1;
 }
 
 function init() {
@@ -231,6 +233,9 @@ function init() {
 
         camera.updateProjectionMatrix();
     });
+
+    window.addEventListener('mousedown', onMouseDown, false);
+    window.addEventListener('mouseup', onMouseUp, false);
 
     initializeGrid();
 }
@@ -364,9 +369,9 @@ function initializeGrid() {
     const objOffsetY = 0.1;
 
     originalMeshPositions = [];
-    var colColors = [
+    colColors = [
         0x00FF00, 0xFF0000, 0xFFFF00, 0x0000FF, 0xFF7F00
-    ]
+    ];
 
     for (var i = 0; i < numMovingLines; i++) {
         notes[i] = [];
@@ -411,7 +416,7 @@ function initializeGrid() {
     // RING
 
     circles = [];
-    var rings = [];
+    rings = [];
     originalColors = [];
 
     for (var i = 0; i < numOfCols; i++) {
@@ -500,6 +505,7 @@ function initializeGrid() {
     quit.addEventListener('click', () => {
         window.location.reload();
     });
+
     animate();
 }
 
@@ -571,7 +577,11 @@ function countDown() {
 
 function checkCollision() {
     let hitBound = activePitches[currNoteLine - movingLines.length + 1];
-    if (JSON.stringify(hitBound) == JSON.stringify(resetIsDown) && !alreadyHit) {
+
+    if (hitBound === undefined || hitBound.every(v => v === false)) {
+        count = 0;
+        multipleHits = 0;
+    } else if (JSON.stringify(hitBound) == JSON.stringify(resetIsDown) && !alreadyHit) {
         for (var i = 0; i < hitBound.length; i++) {
             if (hitBound[i]) {
                 multipleHits++;
@@ -596,12 +606,13 @@ function onKeyDown() {
     switch (event.keyCode) {
         case 32:
             console.log(currNoteLine);
+            break;
         case 40: // up
             camera.translateZ(0.1);
-            break;
+            return;
         case 38: // down
             camera.translateZ(-0.1);
-            break;
+            return;
             // Game Controls
         case 65: // a
             lightButton(0, true);
@@ -938,4 +949,72 @@ function getEndingScreen() {
     mainMenu.addEventListener("click", () => {
         window.location.reload();
     });
+}
+
+function onMouseDown(event) {
+    // calculate mouse position in normalized device coordinates (-1 to +1) for both components
+    mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+    mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+    // update the picking ray with the camera and mouse position
+    raycaster.setFromCamera(mouse, camera);
+
+    // calculate objects intersecting the picking ray
+    intersects = raycaster.intersectObjects(circles);
+
+    var pitchTypes = [pitches.pitchA, pitches.pitchB, pitches.pitchC, pitches.pitchD, pitches.pitchE];
+
+    for (var i = 0; i < intersects.length; i++) {
+
+        var circleHits = getCircleNumbers(intersects);
+        intersects[i].object.material.color.set(0xffffff);
+        intersects[i].object.material.needsUpdate = true;
+        if (isDown[circleHits[i]]) {
+            continue;
+        }
+        isDown[circleHits[i]] = true;
+        resetIsDown[circleHits[i]] = true;
+
+        if (guitarMode) {
+            play.playTone(pitchTypes[circleHits[i]]);
+        }
+    }
+    checkCollision();
+
+}
+
+function onMouseUp(event) {
+    // calculate mouse position in normalized device coordinate (-1 to +1) for both components
+    mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+    mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+    // update the picking ray with the camera and mouse position
+    raycaster.setFromCamera(mouse, camera);
+
+    // calculate objects intersecting the picking ray
+    // var intersects = raycaster.intersectObjects(circles);
+    var pitchTypes = [pitches.pitchA, pitches.pitchB, pitches.pitchC, pitches.pitchD, pitches.pitchE];
+    var circleHits = getCircleNumbers(intersects);
+    for (var i = 0; i < intersects.length; i++) {
+        intersects[i].object.material.color.set(helpers.darkenHex(colColors[circleHits[i]], 0xb0)); //helpers.darkenHex(colColors[circleHits[i]], 0xb0)
+        intersects[i].object.material.needsUpdate = true;
+
+        isDown[circleHits[i]] = false;
+        if (guitarMode) {
+            play.stopTone(pitchTypes[circleHits[i]]);
+        }
+    }
+}
+
+// Helper function to get the indices of the clicked circles.
+function getCircleNumbers(intersects) {
+    var circleHits = [];
+    for (var i = 0; i < circles.length; i++) {
+        for (var j = 0; j < intersects.length; j++) {
+            if (circles[i].material.color === intersects[j].object.material.color) {
+                circleHits.push(i);
+            }
+        }
+    }
+    return circleHits;
 }

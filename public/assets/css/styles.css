@@ -154,7 +154,8 @@ canvas {
     text-align: center;
 }
 
-#pause, #quit {
+#pause,
+#quit {
     position: absolute;
     width: 140px;
 }
@@ -565,4 +566,12 @@ hr {
 
 .star {
     color: gold;
+}
+
+.selectDisable {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
 }
