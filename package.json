@@ -15,7 +15,7 @@
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "three": "^0.110.0"
   }
 }
